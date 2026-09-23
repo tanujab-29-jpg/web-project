@@ -4,8 +4,8 @@
 
 | Field               | Details                                           |
 | ------------------- | ------------------------------------------------- |
-| **Student Name**    | B. Sravya                                         |
-| **Register Number** | 250200115                                         |
+| **Student Name**    | Basha Tanuja                                   |
+| **Register Number** | 250200119                                       |
 | **Class / Section** | Sec 7                                             |
 | **Subject**         | Web Technology and Internet Programming           |
 | **Assignment**      | HTML, CSS & JavaScript Practical Programs Website |

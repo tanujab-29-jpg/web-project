@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Programs Index</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1d4ed8, #7c3aed);
+            color: #fff;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+        h1 {
+            margin: 0 0 10px;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+        .subtitle {
+            color: #dbeafe;
+            font-size: 1.1rem;
+        }
+        .container {
+            width: min(1200px, 90%);
+            margin: 0 auto 50px;
+        }
+        .nav {
+            margin-bottom: 22px;
+        }
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 999px;
+            padding: 12px 22px;
+            transition: 0.3s ease;
+        }
+        .btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+        }
+        .program-card {
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 18px;
+            padding: 22px 18px;
+            text-align: center;
+            transition: transform 0.2s ease, background 0.2s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .program-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.14);
+        }
+        .number {
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #dbeafe;
+            margin-bottom: 8px;
+        }
+        .name {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 24px 20px;
+            color: #dbeafe;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Programs</h1>
+        <div class="subtitle">All practical CSS exercises</div>
+    </header>
+
+    <main class="container">
+        <div class="nav">
+            <a href="../index.html" class="btn">← Back to Home</a>
+        </div>
+        <div id="program-list" class="program-grid"></div>
+    </main>
+
+    <footer>CSS Practice Index</footer>
+
+    <script>
+        const files = Array.from({ length: 75 }, (_, i) => `css-${String(i + 1).padStart(2, '0')}.html`);
+        const list = document.getElementById('program-list');
+
+        files.forEach((file, index) => {
+            const link = document.createElement('a');
+            link.href = file;
+            link.className = 'program-card';
+            link.innerHTML = `
+                <span class="number">CSS ${index + 1}</span>
+                <span class="name">${file.replace('.html', '')}</span>
+            `;
+            list.appendChild(link);
+        });
+    </script>
+</body>
+</html>

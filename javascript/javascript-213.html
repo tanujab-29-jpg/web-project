@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Textarea Validation</title></head>
+<body>
+
+<h1>Textarea Validation</h1>
+
+<textarea id="message" rows="6" cols="40"></textarea>
+<br><br>
+
+<button onclick="validate()">Submit</button>
+
+<p id="msg"></p>
+
+<script>
+function validate(){
+
+    const value=document.getElementById("message").value.trim();
+
+    msg.textContent=value?
+        "Textarea is valid":
+        "Textarea cannot be empty";
+}
+</script>
+
+</body>
+</html>

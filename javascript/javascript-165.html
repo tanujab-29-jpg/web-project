@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Date and Time</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 80px;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+        }
+        .clock {
+            background: white;
+            padding: 40px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 20px;
+        }
+        #time {
+            font-size: 40px;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+
+<div class="clock">
+
+    <h1>Current Date & Time</h1>
+
+    <h2 id="date"></h2>
+
+    <div id="time"></div>
+
+</div>
+
+<script>
+function updateDateTime() {
+
+    const now = new Date();
+
+    document.getElementById("date").textContent =
+        now.toLocaleDateString();
+
+    document.getElementById("time").textContent =
+        now.toLocaleTimeString();
+}
+
+updateDateTime();
+
+setInterval(updateDateTime, 1000);
+</script>
+
+</body>
+</html>

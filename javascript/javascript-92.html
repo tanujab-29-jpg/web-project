@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>92 - Mouse Events</title>
+</head>
+<body>
+
+<h2 id="box">Mouse Event Area</h2>
+
+<p id="result">Perform a mouse action.</p>
+
+<script>
+let box = document.getElementById("box");
+let result = document.getElementById("result");
+
+box.addEventListener("click", function() {
+    result.innerHTML = "Mouse clicked!";
+});
+
+box.addEventListener("dblclick", function() {
+    result.innerHTML = "Mouse double-clicked!";
+});
+
+box.addEventListener("mouseover", function() {
+    result.innerHTML = "Mouse entered the area!";
+});
+
+box.addEventListener("mouseout", function() {
+    result.innerHTML = "Mouse left the area!";
+});
+
+box.addEventListener("mousedown", function() {
+    result.innerHTML = "Mouse button pressed!";
+});
+
+box.addEventListener("mouseup", function() {
+    result.innerHTML = "Mouse button released!";
+});
+</script>
+
+</body>
+</html>

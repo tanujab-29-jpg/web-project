@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>89 - Dynamic Event Listener</title>
+</head>
+<body>
+
+<button id="btn">Add Event</button>
+
+<p id="result"></p>
+
+<script>
+let button = document.getElementById("btn");
+
+button.addEventListener("click", function() {
+    document.getElementById("result").innerHTML =
+        "Event listener added and executed!";
+});
+</script>
+
+</body>
+</html>

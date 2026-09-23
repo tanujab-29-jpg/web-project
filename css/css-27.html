@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 27 - Selectors</title>
+
+    <style>
+
+        /* Universal */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        /* Element */
+        h1 {
+            color: #4f8cff;
+        }
+
+        /* Class */
+        .box {
+            padding: 20px;
+            background: #101f38;
+        }
+
+        /* ID */
+        #special {
+            color: #ff5ca8;
+        }
+
+        /* Attribute */
+        input[type="email"] {
+            border: 3px solid #4f8cff;
+        }
+
+        /* Grouping */
+        h2, h3 {
+            color: #ff5ca8;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            background: #172b4d;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Selectors</h1>
+
+    <div class="box">
+
+        <h2>Class Selector</h2>
+
+        <h3 id="special">ID Selector</h3>
+
+        <input type="text" placeholder="Text">
+
+        <input type="email" placeholder="Email">
+
+    </div>
+
+</body>
+</html>

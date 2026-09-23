@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove HTML Element Dynamically</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            width: 450px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+        }
+
+        .item {
+            background: #f2f2f2;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 5px solid #667eea;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        #removeBtn {
+            background: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Remove HTML Element</h1>
+
+        <div id="item1" class="item">
+            Element 1
+        </div>
+
+        <div id="item2" class="item">
+            Element 2
+        </div>
+
+        <div id="item3" class="item">
+            Element 3
+        </div>
+
+        <button onclick="removeElement()">
+            Remove Element 2
+        </button>
+
+    </div>
+
+    <script>
+
+        function removeElement() {
+
+            const element =
+                document.getElementById("item2");
+
+            if (element) {
+                element.remove();
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

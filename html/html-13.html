@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Webpage</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            flex: 1;
+            padding: 30px;
+            background: lightblue;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                flex-direction: column;
+            }
+
+            .card {
+                background: lightpink;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Responsive Website</h1>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>HTML</h2>
+            <p>Structure webpages.</p>
+        </div>
+
+        <div class="card">
+            <h2>CSS</h2>
+            <p>Style webpages.</p>
+        </div>
+
+        <div class="card">
+            <h2>JavaScript</h2>
+            <p>Add functionality.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

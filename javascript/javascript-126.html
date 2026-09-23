@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .expense-container {
+            background: white;
+            width: 430px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        #addBtn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        #addBtn:hover {
+            background: #5568d8;
+        }
+
+        .total-box {
+            background: #f0f3ff;
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .total-box h2 {
+            margin: 0;
+            color: #555;
+            font-size: 18px;
+        }
+
+        #total {
+            color: #667eea;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f5f5f5;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .expense-details {
+            flex: 1;
+        }
+
+        .expense-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .expense-amount {
+            color: #dc3545;
+            margin-top: 4px;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 7px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background: #c82333;
+        }
+
+        #message {
+            text-align: center;
+            color: #777;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="expense-container">
+
+        <h1>Expense Tracker</h1>
+
+        <div class="form-group">
+
+            <label for="expenseName">
+                Expense Name
+            </label>
+
+            <input
+                type="text"
+                id="expenseName"
+                placeholder="Example: Food"
+            >
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="expenseAmount">
+                Amount
+            </label>
+
+            <input
+                type="number"
+                id="expenseAmount"
+                placeholder="Enter amount"
+                min="0"
+                step="0.01"
+            >
+
+        </div>
+
+        <button id="addBtn" onclick="addExpense()">
+            Add Expense
+        </button>
+
+        <div class="total-box">
+
+            <h2>Total Expenses</h2>
+
+            <div id="total">₹0.00</div>
+
+        </div>
+
+        <ul id="expenseList"></ul>
+
+        <div id="message">
+            No expenses added yet.
+        </div>
+
+    </div>
+
+    <script>
+
+        let expenses = [];
+
+        function addExpense() {
+
+            const name =
+                document.getElementById("expenseName").value.trim();
+
+            const amount =
+                parseFloat(
+                    document.getElementById("expenseAmount").value
+                );
+
+            if (name === "") {
+
+                alert("Please enter the expense name.");
+
+                return;
+            }
+
+            if (isNaN(amount) || amount <= 0) {
+
+                alert("Please enter a valid amount.");
+
+                return;
+            }
+
+            const expense = {
+                name: name,
+                amount: amount
+            };
+
+            expenses.push(expense);
+
+            document.getElementById("expenseName").value = "";
+            document.getElementById("expenseAmount").value = "";
+
+            displayExpenses();
+        }
+
+        function displayExpenses() {
+
+            const list =
+                document.getElementById("expenseList");
+
+            const message =
+                document.getElementById("message");
+
+            list.innerHTML = "";
+
+            let total = 0;
+
+            expenses.forEach(function(expense, index) {
+
+                total += expense.amount;
+
+                const listItem =
+                    document.createElement("li");
+
+                const details =
+                    document.createElement("div");
+
+                details.className = "expense-details";
+
+                const name =
+                    document.createElement("div");
+
+                name.className = "expense-name";
+
+                name.textContent = expense.name;
+
+                const amount =
+                    document.createElement("div");
+
+                amount.className = "expense-amount";
+
+                amount.textContent =
+                    `₹${expense.amount.toFixed(2)}`;
+
+                details.appendChild(name);
+                details.appendChild(amount);
+
+                const deleteButton =
+                    document.createElement("button");
+
+                deleteButton.textContent = "Delete";
+
+                deleteButton.className = "delete-btn";
+
+                deleteButton.onclick = function() {
+
+                    deleteExpense(index);
+
+                };
+
+                listItem.appendChild(details);
+                listItem.appendChild(deleteButton);
+
+                list.appendChild(listItem);
+            });
+
+            document.getElementById("total").textContent =
+                `₹${total.toFixed(2)}`;
+
+            if (expenses.length === 0) {
+
+                message.textContent =
+                    "No expenses added yet.";
+
+            } else {
+
+                message.textContent = "";
+            }
+        }
+
+        function deleteExpense(index) {
+
+            expenses.splice(index, 1);
+
+            displayExpenses();
+        }
+
+    </script>
+
+</body>
+</html>

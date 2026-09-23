@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 53 - Login Signup</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #07111f, #172b4d);
+            color: white;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 900px;
+            max-width: 100%;
+            display: flex;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .welcome {
+            flex: 1;
+            padding: 50px;
+            background: linear-gradient(135deg, #4f8cff, #ff5ca8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form {
+            flex: 1;
+            padding: 50px;
+            background: #101f38;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin: 8px 0 18px;
+            border: 1px solid #4f8cff;
+            border-radius: 10px;
+            background: #07111f;
+            color: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #4f8cff, #ff5ca8);
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .welcome,
+            .form {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="welcome">
+        <h1>Welcome!</h1>
+        <p>Create an account or login to continue.</p>
+    </div>
+
+    <div class="form">
+        <h2>Login / Signup</h2>
+
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+
+        <button>Submit</button>
+    </div>
+
+</div>
+
+</body>
+</html>

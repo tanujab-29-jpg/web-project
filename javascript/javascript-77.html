@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>77 - Focus and Blur</title>
+</head>
+<body>
+
+<h2>Focus and Blur Events</h2>
+
+<input type="text"
+       placeholder="Click here"
+       onfocus="focusInput(this)"
+       onblur="blurInput(this)">
+
+<script>
+function focusInput(element) {
+    element.style.backgroundColor = "lightblue";
+}
+
+function blurInput(element) {
+    element.style.backgroundColor = "white";
+}
+</script>
+
+</body>
+</html>

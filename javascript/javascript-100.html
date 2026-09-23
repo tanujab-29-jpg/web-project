@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>100 - Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            display: block;
+            margin-top: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        #success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Registration Form</h2>
+
+    <form id="registrationForm">
+
+        <label for="name">Student Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <span id="nameError" class="error"></span>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter your email">
+        <span id="emailError" class="error"></span>
+
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" placeholder="Enter 10-digit phone number">
+        <span id="phoneError" class="error"></span>
+
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="Enter your age">
+        <span id="ageError" class="error"></span>
+
+        <label for="course">Course</label>
+        <select id="course">
+            <option value="">-- Select Course --</option>
+            <option value="B.Tech CSE">B.Tech CSE</option>
+            <option value="B.Tech ECE">B.Tech ECE</option>
+            <option value="B.Tech EEE">B.Tech EEE</option>
+            <option value="B.Tech ME">B.Tech ME</option>
+        </select>
+        <span id="courseError" class="error"></span>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password">
+        <span id="passwordError" class="error"></span>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <p id="success"></p>
+
+</div>
+
+<script>
+
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+
+    // Prevent page reload
+    event.preventDefault();
+
+    // Get values
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let age = document.getElementById("age").value.trim();
+    let course = document.getElementById("course").value;
+    let password = document.getElementById("password").value;
+
+    // Error elements
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let phoneError = document.getElementById("phoneError");
+    let ageError = document.getElementById("ageError");
+    let courseError = document.getElementById("courseError");
+    let passwordError = document.getElementById("passwordError");
+    let success = document.getElementById("success");
+
+    // Clear previous messages
+    nameError.innerHTML = "";
+    emailError.innerHTML = "";
+    phoneError.innerHTML = "";
+    ageError.innerHTML = "";
+    courseError.innerHTML = "";
+    passwordError.innerHTML = "";
+    success.innerHTML = "";
+
+    let valid = true;
+
+    // Name validation
+    if (name === "") {
+
+        nameError.innerHTML = "Name is required.";
+        valid = false;
+
+    } else if (!/^[A-Za-z ]+$/.test(name)) {
+
+        nameError.innerHTML =
+            "Name must contain only letters.";
+        valid = false;
+    }
+
+    // Email validation
+    let emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+
+        emailError.innerHTML = "Email is required.";
+        valid = false;
+
+    } else if (!emailPattern.test(email)) {
+
+        emailError.innerHTML =
+            "Enter a valid email address.";
+        valid = false;
+    }
+
+    // Phone validation
+    let phonePattern = /^[0-9]{10}$/;
+
+    if (phone === "") {
+
+        phoneError.innerHTML =
+            "Phone number is required.";
+        valid = false;
+
+    } else if (!phonePattern.test(phone)) {
+
+        phoneError.innerHTML =
+            "Phone number must contain exactly 10 digits.";
+        valid = false;
+    }
+
+    // Age validation
+    if (age === "") {
+
+        ageError.innerHTML = "Age is required.";
+        valid = false;
+
+    } else if (age < 17 || age > 60) {
+
+        ageError.innerHTML =
+            "Age must be between 17 and 60.";
+        valid = false;
+    }
+
+    // Course validation
+    if (course === "") {
+
+        courseError.innerHTML =
+            "Please select a course.";
+        valid = false;
+    }
+
+    // Password validation
+    if (password === "") {
+
+        passwordError.innerHTML =
+            "Password is required.";
+        valid = false;
+
+    } else if (password.length < 6) {
+
+        passwordError.innerHTML =
+            "Password must contain at least 6 characters.";
+        valid = false;
+    }
+
+    // Final result
+    if (valid) {
+
+        success.innerHTML =
+            "Registration successful!";
+
+        document.getElementById("registrationForm").reset();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

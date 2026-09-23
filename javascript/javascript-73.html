@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>73 - Change Event</title>
+</head>
+<body>
+
+<h2>Select a Course</h2>
+
+<select onchange="showCourse(this.value)">
+    <option value="">Select</option>
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+    <option value="JavaScript">JavaScript</option>
+</select>
+
+<p id="result"></p>
+
+<script>
+function showCourse(course) {
+    document.getElementById("result").innerHTML =
+        "Selected Course: " + course;
+}
+</script>
+
+</body>
+</html>

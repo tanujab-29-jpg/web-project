@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><title>Form Events</title></head>
+<body>
+
+<h1>Form Events</h1>
+
+<input id="name" placeholder="Enter name">
+
+<select id="course">
+<option>CSE</option>
+<option>ECE</option>
+</select>
+
+<p id="msg"></p>
+
+<script>
+const name=document.getElementById("name");
+
+name.addEventListener("input",function(){
+    msg.textContent="Input event";
+});
+
+name.addEventListener("focus",function(){
+    msg.textContent="Focus event";
+});
+
+name.addEventListener("blur",function(){
+    msg.textContent="Blur event";
+});
+
+document.getElementById("course").addEventListener("change",function(){
+    msg.textContent="Change event: "+this.value;
+});
+</script>
+
+</body>
+</html>

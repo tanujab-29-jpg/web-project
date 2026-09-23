@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            width: 420px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5568d8;
+        }
+
+        #result {
+            margin-top: 25px;
+            padding: 15px;
+            text-align: center;
+            background: #f2f2f2;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        #status {
+            text-align: center;
+            margin-top: 15px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>💱 Currency Converter</h1>
+
+    <label for="amount">Amount</label>
+
+    <input
+        type="number"
+        id="amount"
+        placeholder="Enter amount"
+        value="1"
+        min="0"
+    >
+
+    <label for="fromCurrency">From Currency</label>
+
+    <select id="fromCurrency">
+        <option value="USD">USD - US Dollar</option>
+        <option value="INR">INR - Indian Rupee</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="GBP">GBP - British Pound</option>
+        <option value="JPY">JPY - Japanese Yen</option>
+        <option value="AUD">AUD - Australian Dollar</option>
+        <option value="CAD">CAD - Canadian Dollar</option>
+    </select>
+
+    <label for="toCurrency">To Currency</label>
+
+    <select id="toCurrency">
+        <option value="INR">INR - Indian Rupee</option>
+        <option value="USD">USD - US Dollar</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="GBP">GBP - British Pound</option>
+        <option value="JPY">JPY - Japanese Yen</option>
+        <option value="AUD">AUD - Australian Dollar</option>
+        <option value="CAD">CAD - Canadian Dollar</option>
+    </select>
+
+    <button onclick="convertCurrency()">
+        Convert Currency
+    </button>
+
+    <div id="status"></div>
+
+    <div id="result">
+        Result will appear here
+    </div>
+
+</div>
+
+<script>
+
+async function convertCurrency() {
+
+    const amount =
+        parseFloat(document.getElementById("amount").value);
+
+    const from =
+        document.getElementById("fromCurrency").value;
+
+    const to =
+        document.getElementById("toCurrency").value;
+
+    const status =
+        document.getElementById("status");
+
+    const result =
+        document.getElementById("result");
+
+    // Validate amount
+    if (isNaN(amount) || amount <= 0) {
+
+        status.textContent =
+            "Please enter a valid amount.";
+
+        result.textContent =
+            "Result will appear here";
+
+        return;
+    }
+
+    status.textContent =
+        "Fetching exchange rate...";
+
+    result.textContent =
+        "Please wait...";
+
+    try {
+
+        const url =
+            `https://api.frankfurter.app/latest?amount=${amount}&from=${from}&to=${to}`;
+
+        const response =
+            await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("API request failed");
+        }
+
+        const data =
+            await response.json();
+
+        const convertedAmount =
+            data.rates[to];
+
+        result.textContent =
+            `${amount} ${from} = ${convertedAmount.toFixed(2)} ${to}`;
+
+        status.textContent =
+            "Conversion successful.";
+
+    } catch (error) {
+
+        console.error(error);
+
+        status.textContent =
+            "Unable to fetch exchange rate.";
+
+        result.textContent =
+            "Please check your internet connection and try again.";
+    }
+}
+
+</script>
+
+</body>
+</html>

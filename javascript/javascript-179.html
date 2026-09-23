@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Focus Blur</title></head>
+<body>
+
+<h1>Focus and Blur</h1>
+
+<input id="name" placeholder="Click here">
+
+<p id="msg"></p>
+
+<script>
+const input=document.getElementById("name");
+
+input.addEventListener("focus",function(){
+    input.style.background="#dff0ff";
+    document.getElementById("msg").textContent="Input focused";
+});
+
+input.addEventListener("blur",function(){
+    input.style.background="white";
+    document.getElementById("msg").textContent="Input lost focus";
+});
+</script>
+
+</body>
+</html>

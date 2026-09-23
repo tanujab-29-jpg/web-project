@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Second Largest</title>
+</head>
+<body>
+    <h2>Second Largest Element</h2>
+
+    <script>
+        let arr = [10, 25, 5, 40, 30, 40];
+
+        let unique = [...new Set(arr)];
+        unique.sort((a, b) => b - a);
+
+        document.write("Array: " + arr.join(", ") + "<br>");
+
+        if (unique.length >= 2) {
+            document.write("Second largest element: " + unique[1]);
+        } else {
+            document.write("There is no second largest element.");
+        }
+    </script>
+</body>
+</html>

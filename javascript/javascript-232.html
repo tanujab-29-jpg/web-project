@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Form Preview</title></head>
+<body>
+
+<h1>Student Form</h1>
+
+<input id="name" placeholder="Name"><br><br>
+<input id="email" placeholder="Email"><br><br>
+<input id="course" placeholder="Course"><br><br>
+
+<button onclick="preview()">Preview</button>
+
+<div id="preview"></div>
+
+<script>
+function preview(){
+
+    const name=document.getElementById("name").value;
+    const email=document.getElementById("email").value;
+    const course=document.getElementById("course").value;
+
+    document.getElementById("preview").innerHTML=`
+        <h2>Preview</h2>
+        <p>Name: ${name}</p>
+        <p>Email: ${email}</p>
+        <p>Course: ${course}</p>
+    `;
+}
+</script>
+
+</body>
+</html>

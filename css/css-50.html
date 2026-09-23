@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 50 - Sticky Header</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            background: rgba(16, 31, 56, 0.95);
+            border-bottom: 2px solid #4f8cff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #ff5ca8;
+        }
+
+        section {
+            min-height: 600px;
+            padding: 80px 10%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #07111f, #172b4d);
+        }
+
+        .about {
+            background: #101f38;
+        }
+
+        .contact {
+            background: #172b4d;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #4f8cff;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <h2>My Website</h2>
+
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Sticky Header</h1>
+    <p>Scroll down to see the header remain at the top.</p>
+</section>
+
+<section class="about">
+    <h1>About</h1>
+    <p>
+        This section demonstrates how position: sticky keeps
+        an element visible while scrolling.
+    </p>
+</section>
+
+<section class="contact">
+    <h1>Contact</h1>
+    <p>Email: student@example.com</p>
+</section>
+
+</body>
+</html>

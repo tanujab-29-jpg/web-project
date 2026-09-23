@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Select Options</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+            text-align: center;
+            padding: 60px;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            max-width: 450px;
+            margin: auto;
+            border-radius: 20px;
+        }
+        input, button, select {
+            padding: 12px;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>Add Course</h1>
+
+    <input id="courseInput" placeholder="Enter course">
+
+    <button onclick="addOption()">Add</button>
+
+    <br>
+
+    <select id="courseList">
+        <option>Select Course</option>
+    </select>
+</div>
+
+<script>
+function addOption() {
+    const input = document.getElementById("courseInput");
+    const value = input.value.trim();
+
+    if (value === "") {
+        alert("Enter a course");
+        return;
+    }
+
+    const option = document.createElement("option");
+
+    option.textContent = value;
+    option.value = value;
+
+    document.getElementById("courseList").appendChild(option);
+
+    input.value = "";
+}
+</script>
+
+</body>
+</html>

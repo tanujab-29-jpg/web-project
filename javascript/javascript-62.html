@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Palindrome</title>
+</head>
+<body>
+    <h2>Check String Palindrome</h2>
+
+    <script>
+        let str = "madam";
+
+        let reverse = str.split("").reverse().join("");
+
+        if (str.toLowerCase() === reverse.toLowerCase()) {
+            document.write(str + " is a palindrome.");
+        } else {
+            document.write(str + " is not a palindrome.");
+        }
+    </script>
+</body>
+</html>

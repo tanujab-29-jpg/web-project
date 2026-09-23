@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS 75 - Complete Responsive Website</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #07111f;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #101f38;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #4f8cff;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff5ca8;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 600px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+            padding: 70px 7%;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            color: #4f8cff;
+        }
+
+        .hero h1 span {
+            color: #ff5ca8;
+        }
+
+        .hero p {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #d0d8e8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            background: linear-gradient(45deg, #4f8cff, #ff5ca8);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .hero-image {
+            background: linear-gradient(135deg, #4f8cff, #ff5ca8);
+            height: 350px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+        }
+
+        /* ABOUT */
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #4f8cff;
+        }
+
+        .section-title p {
+            color: #bbb;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .about-box {
+            background: #101f38;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #101f38;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(79, 140, 255, 0.25);
+        }
+
+        .card .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #ff5ca8;
+            margin-bottom: 10px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill {
+            background: #101f38;
+            border: 1px solid #4f8cff;
+            padding: 15px 25px;
+            border-radius: 30px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            max-width: 700px;
+            margin: auto;
+            background: #101f38;
+            padding: 35px;
+            border-radius: 20px;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            background: #182d4f;
+            color: white;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #4f8cff, #ff5ca8);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #101f38;
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        footer span {
+            color: #ff5ca8;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 50px 5%;
+            }
+
+            .hero-image {
+                height: 250px;
+                font-size: 70px;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        CodeSpace
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <h1>
+            Build Your
+            <span>Future</span>
+        </h1>
+
+        <p>
+            Welcome to CodeSpace, a responsive website
+            demonstrating HTML5, CSS3, Flexbox, Grid,
+            animations and media queries.
+        </p>
+
+        <a href="#services" class="btn">
+            Explore More
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+        💻
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>About Us</h2>
+
+        <p>
+            Learning modern web development
+        </p>
+
+    </div>
+
+    <div class="about">
+
+        <div class="about-box">
+
+            <h3>Modern Design</h3>
+
+            <p>
+                This website uses modern CSS techniques
+                including Flexbox, Grid, gradients,
+                transitions and responsive layouts.
+            </p>
+
+        </div>
+
+        <div class="about-box">
+
+            <h3>Responsive Layout</h3>
+
+            <p>
+                The webpage automatically adapts to
+                desktop, tablet and mobile screen sizes
+                using CSS media queries.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="section-title">
+
+        <h2>Our Services</h2>
+
+        <p>
+            What we provide
+        </p>
+
+    </div>
+
+    <div class="services">
+
+        <div class="card">
+
+            <div class="icon">🌐</div>
+
+            <h3>Web Design</h3>
+
+            <p>
+                Create attractive and responsive websites.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">🎨</div>
+
+            <h3>UI Design</h3>
+
+            <p>
+                Design modern and user-friendly interfaces.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">💻</div>
+
+            <h3>Development</h3>
+
+            <p>
+                Build websites using modern technologies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-title">
+
+        <h2>Our Skills</h2>
+
+        <p>
+            Technologies used
+        </p>
+
+    </div>
+
+    <div class="skills">
+
+        <div class="skill">HTML5</div>
+        <div class="skill">CSS3</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Flexbox</div>
+        <div class="skill">CSS Grid</div>
+        <div class="skill">Responsive Design</div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Us</h2>
+
+        <p>
+            Send us a message
+        </p>
+
+    </div>
+
+    <div class="contact">
+
+        <form>
+
+            <input
+                type="text"
+                placeholder="Enter your name"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <textarea
+                placeholder="Enter your message"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 CodeSpace |
+        Designed with <span>CSS3</span>
+    </p>
+
+</footer>
+
+</body>
+</html>

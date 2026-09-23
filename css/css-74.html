@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 74 - Calc Function</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #07111f;
+            color: white;
+        }
+
+        header {
+            height: 80px;
+            background: #101f38;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #4f8cff;
+        }
+
+        .content {
+            width: calc(100% - 60px);
+            margin: 30px;
+            display: grid;
+            grid-template-columns: 250px calc(100% - 270px);
+            gap: 20px;
+        }
+
+        .sidebar,
+        .main {
+            background: #101f38;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .sidebar {
+            min-height: 400px;
+        }
+
+        .main {
+            min-height: 400px;
+        }
+
+        .box {
+            width: calc(100% - 40px);
+            margin: 20px;
+            padding: 25px;
+            background: #182d4f;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .content {
+                width: calc(100% - 30px);
+                margin: 15px;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>CSS calc() Function</h1>
+</header>
+
+<div class="content">
+
+    <aside class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Width is calculated using CSS.</p>
+    </aside>
+
+    <main class="main">
+
+        <h2>Main Content</h2>
+
+        <div class="box">
+            <h3>Using calc()</h3>
+            <p>
+                The calc() function allows mathematical calculations
+                to be performed while defining CSS property values.
+            </p>
+
+            <p>
+                Example:
+                <strong>width: calc(100% - 40px);</strong>
+            </p>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

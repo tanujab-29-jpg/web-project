@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>76 - Reset Event</title>
+</head>
+<body>
+
+<h2>Reset Event</h2>
+
+<form onreset="resetForm()">
+    <input type="text" placeholder="Enter your name">
+    <br><br>
+
+    <button type="reset">Reset</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+function resetForm() {
+    document.getElementById("result").innerHTML =
+        "Form has been reset!";
+}
+</script>
+
+</body>
+</html>

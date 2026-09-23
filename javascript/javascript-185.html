@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Font Size</title></head>
+<body>
+
+<h1 id="text">Dynamic Font Size</h1>
+
+<button onclick="increase()">Increase</button>
+<button onclick="decrease()">Decrease</button>
+
+<script>
+let size=30;
+
+function increase(){
+    size+=5;
+    document.getElementById("text").style.fontSize=size+"px";
+}
+
+function decrease(){
+    size-=5;
+    if(size<10) size=10;
+    document.getElementById("text").style.fontSize=size+"px";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 43 - Filters</title>
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery div {
+            background: #101f38;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        img {
+            width: 220px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .blur {
+            filter: blur(5px);
+        }
+
+        .gray {
+            filter: grayscale(100%);
+        }
+
+        .bright {
+            filter: brightness(1.8);
+        }
+
+        .contrast {
+            filter: contrast(200%);
+        }
+    </style>
+</head>
+<body>
+
+<h1>CSS Filters</h1>
+
+<div class="gallery">
+
+    <div>
+        <p>Normal</p>
+        <img src="https://picsum.photos/400/300?1">
+    </div>
+
+    <div>
+        <p>Blur</p>
+        <img class="blur" src="https://picsum.photos/400/300?2">
+    </div>
+
+    <div>
+        <p>Grayscale</p>
+        <img class="gray" src="https://picsum.photos/400/300?3">
+    </div>
+
+    <div>
+        <p>Brightness</p>
+        <img class="bright" src="https://picsum.photos/400/300?4">
+    </div>
+
+    <div>
+        <p>Contrast</p>
+        <img class="contrast" src="https://picsum.photos/400/300?5">
+    </div>
+
+</div>
+
+</body>
+</html>

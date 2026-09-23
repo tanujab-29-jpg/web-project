@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Tooltip</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 100px;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+        }
+
+        button {
+            padding: 15px 30px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: #222;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Dynamic Tooltip</h1>
+
+<button id="myButton">
+    Move Mouse Here
+</button>
+
+<script>
+const button = document.getElementById("myButton");
+
+button.addEventListener("mouseenter", function() {
+
+    const tooltip = document.createElement("div");
+
+    tooltip.textContent = "This is a dynamic tooltip";
+    tooltip.className = "tooltip";
+    tooltip.id = "tooltip";
+
+    document.body.appendChild(tooltip);
+
+    const rect = button.getBoundingClientRect();
+
+    tooltip.style.left = rect.left + "px";
+    tooltip.style.top = (rect.bottom + 10) + "px";
+});
+
+button.addEventListener("mouseleave", function() {
+
+    const tooltip = document.getElementById("tooltip");
+
+    if (tooltip) {
+        tooltip.remove();
+    }
+});
+</script>
+
+</body>
+</html>

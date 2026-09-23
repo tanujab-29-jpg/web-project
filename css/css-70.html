@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 70 - Modal Popup</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            display: grid;
+            place-items: center;
+        }
+
+        .open-btn {
+            padding: 15px 35px;
+            background: linear-gradient(90deg, #4f8cff, #ff5ca8);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #modal {
+            display: none;
+        }
+
+        #modal:target {
+            display: flex;
+            position: fixed;
+            inset: 0;
+            background: #000b;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-box {
+            width: 400px;
+            max-width: 85%;
+            padding: 35px;
+            background: #101f38;
+            border: 1px solid #4f8cff;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .modal-box h2 {
+            color: #ff5ca8;
+        }
+
+        .close {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #4f8cff;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<a href="#modal" class="open-btn">
+    Open Modal
+</a>
+
+<div id="modal">
+
+    <div class="modal-box">
+
+        <h2>CSS Modal</h2>
+
+        <p>
+            This popup is created using only HTML and CSS.
+        </p>
+
+        <a href="#" class="close">
+            Close
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 56 - Restaurant</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        header {
+            padding: 20px 8%;
+            background: #101f38;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            color: #ff5ca8;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            min-height: 500px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 40px;
+            background:
+                linear-gradient(#07111fcc, #07111fcc),
+                url("https://picsum.photos/1600/800?food");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            color: #ff5ca8;
+        }
+
+        .menu {
+            padding: 60px 8%;
+        }
+
+        .items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .item {
+            padding: 30px;
+            background: #101f38;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .price {
+            color: #4f8cff;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .items {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>Food Paradise</h2>
+
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">Contact</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Welcome to Food Paradise</h1>
+        <p>Delicious food made with love.</p>
+    </div>
+</section>
+
+<section class="menu">
+    <h1>Our Menu</h1>
+
+    <div class="items">
+
+        <div class="item">
+            <h2>Pizza</h2>
+            <p>Cheesy vegetable pizza.</p>
+            <div class="price">₹299</div>
+        </div>
+
+        <div class="item">
+            <h2>Burger</h2>
+            <p>Classic cheese burger.</p>
+            <div class="price">₹199</div>
+        </div>
+
+        <div class="item">
+            <h2>Pasta</h2>
+            <p>Creamy Italian pasta.</p>
+            <div class="price">₹249</div>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

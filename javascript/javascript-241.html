@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>setTimeout</title>
+</head>
+<body>
+
+<h1>setTimeout()</h1>
+
+<button onclick="start()">Start</button>
+<p id="output"></p>
+
+<script>
+function start() {
+    document.getElementById("output").textContent =
+        "Waiting 3 seconds...";
+
+    setTimeout(function() {
+        document.getElementById("output").textContent =
+            "3 seconds completed!";
+    }, 3000);
+}
+</script>
+
+</body>
+</html>

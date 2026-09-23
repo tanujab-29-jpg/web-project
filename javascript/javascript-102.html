@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>102 - Password Strength Checker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        #strength {
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .weak {
+            color: red;
+        }
+
+        .medium {
+            color: orange;
+        }
+
+        .strong {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Password Strength Checker</h2>
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+    >
+
+    <p id="strength">Enter a password</p>
+
+</div>
+
+<script>
+
+let password = document.getElementById("password");
+let strength = document.getElementById("strength");
+
+password.addEventListener("input", function() {
+
+    let value = password.value;
+
+    strength.className = "";
+
+    if (value.length === 0) {
+
+        strength.innerHTML = "Enter a password";
+
+    }
+
+    else if (value.length < 6) {
+
+        strength.innerHTML = "Weak Password";
+        strength.className = "weak";
+
+    }
+
+    else if (
+        value.length >= 6 &&
+        /[A-Z]/.test(value) &&
+        /[a-z]/.test(value) &&
+        /[0-9]/.test(value)
+    ) {
+
+        if (/[!@#$%^&*]/.test(value)) {
+            strength.innerHTML = "Strong Password";
+            strength.className = "strong";
+        } else {
+            strength.innerHTML = "Medium Password";
+            strength.className = "medium";
+        }
+
+    }
+
+    else {
+
+        strength.innerHTML = "Medium Password";
+        strength.className = "medium";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mouse Events</title>
+<style>
+body{text-align:center;font-family:Arial;padding:50px}
+#box{padding:60px;background:#667eea;color:white;width:250px;margin:auto}
+</style>
+</head>
+<body>
+
+<h1>onmouseover and onmouseout</h1>
+
+<div id="box"
+     onmouseover="mouseOver()"
+     onmouseout="mouseOut()">
+    Move Mouse Here
+</div>
+
+<p id="msg"></p>
+
+<script>
+function mouseOver(){
+    document.getElementById("box").style.background="#e91e63";
+    document.getElementById("msg").textContent="Mouse is over the box";
+}
+
+function mouseOut(){
+    document.getElementById("box").style.background="#667eea";
+    document.getElementById("msg").textContent="Mouse left the box";
+}
+</script>
+
+</body>
+</html>

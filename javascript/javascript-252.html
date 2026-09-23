@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Browser Information</title>
+</head>
+<body>
+
+<h1>Browser Information</h1>
+
+<div id="output"></div>
+
+<script>
+document.getElementById("output").innerHTML = `
+    <p>User Agent: ${navigator.userAgent}</p>
+    <p>Platform: ${navigator.platform}</p>
+    <p>Language: ${navigator.language}</p>
+    <p>Cookies Enabled: ${navigator.cookieEnabled}</p>
+    <p>Online: ${navigator.onLine}</p>
+`;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        .box {
+            color: white;
+            background-color: purple;
+            font-size: 20px;
+            margin: 30px;
+            padding: 20px;
+            border: 3px solid black;
+        }
+
+        #special {
+            color: red;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            border: 2px solid green;
+            padding: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>CSS Selectors</h1>
+
+    <div class="box">
+        This is a styled box.
+    </div>
+
+    <p id="special">
+        This paragraph uses an ID selector.
+    </p>
+
+    <input type="text" placeholder="Enter your name">
+
+</body>
+</html>

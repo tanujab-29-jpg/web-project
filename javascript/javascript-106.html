@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Validation Errors</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Registration Form</h2>
+
+    <form id="registrationForm">
+
+        <label>Name</label>
+        <input type="text" id="name">
+        <div id="nameError" class="error"></div>
+
+        <label>Email</label>
+        <input type="text" id="email">
+        <div id="emailError" class="error"></div>
+
+        <label>Phone</label>
+        <input type="text" id="phone">
+        <div id="phoneError" class="error"></div>
+
+        <label>Password</label>
+        <input type="password" id="password">
+        <div id="passwordError" class="error"></div>
+
+        <button type="submit">Register</button>
+
+        <div id="successMessage" class="success"></div>
+
+    </form>
+
+</div>
+
+<script>
+
+const form = document.getElementById("registrationForm");
+
+form.addEventListener("submit", function(event) {
+
+    // Prevent page reload
+    event.preventDefault();
+
+    // Get values
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let password = document.getElementById("password").value;
+
+    // Error elements
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let phoneError = document.getElementById("phoneError");
+    let passwordError = document.getElementById("passwordError");
+    let successMessage = document.getElementById("successMessage");
+
+    // Clear previous messages
+    nameError.textContent = "";
+    emailError.textContent = "";
+    phoneError.textContent = "";
+    passwordError.textContent = "";
+    successMessage.textContent = "";
+
+    let valid = true;
+
+    // Name validation
+    if (name === "") {
+        nameError.textContent = "Name is required.";
+        valid = false;
+    }
+    else if (!/^[A-Za-z ]+$/.test(name)) {
+        nameError.textContent =
+            "Name should contain only letters.";
+        valid = false;
+    }
+
+    // Email validation
+    if (email === "") {
+        emailError.textContent = "Email is required.";
+        valid = false;
+    }
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailError.textContent =
+            "Please enter a valid email address.";
+        valid = false;
+    }
+
+    // Phone validation
+    if (phone === "") {
+        phoneError.textContent = "Phone number is required.";
+        valid = false;
+    }
+    else if (!/^[0-9]{10}$/.test(phone)) {
+        phoneError.textContent =
+            "Phone number must contain 10 digits.";
+        valid = false;
+    }
+
+    // Password validation
+    if (password === "") {
+        passwordError.textContent =
+            "Password is required.";
+        valid = false;
+    }
+    else if (password.length < 6) {
+        passwordError.textContent =
+            "Password must contain at least 6 characters.";
+        valid = false;
+    }
+
+    // Display success message
+    if (valid) {
+
+        successMessage.textContent =
+            "Registration successful!";
+
+        form.reset();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Object</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            padding: 40px;
+        }
+
+        .container {
+            width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .info {
+            padding: 12px;
+            margin: 8px 0;
+            background: #eef4ff;
+            border-radius: 5px;
+            word-break: break-all;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 8px 4px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Location Object</h2>
+
+    <div class="info">
+        <span class="label">Complete URL:</span>
+        <span id="href"></span>
+    </div>
+
+    <div class="info">
+        <span class="label">Protocol:</span>
+        <span id="protocol"></span>
+    </div>
+
+    <div class="info">
+        <span class="label">Host:</span>
+        <span id="host"></span>
+    </div>
+
+    <div class="info">
+        <span class="label">Hostname:</span>
+        <span id="hostname"></span>
+    </div>
+
+    <div class="info">
+        <span class="label">Port:</span>
+        <span id="port"></span>
+    </div>
+
+    <div class="info">
+        <span class="label">Path:</span>
+        <span id="pathname"></span>
+    </div>
+
+    <br>
+
+    <button onclick="reloadPage()">Reload Page</button>
+
+    <button onclick="goToGoogle()">Go to Google</button>
+
+</div>
+
+<script>
+
+let currentLocation = window.location;
+
+document.getElementById("href").textContent =
+    currentLocation.href;
+
+document.getElementById("protocol").textContent =
+    currentLocation.protocol;
+
+document.getElementById("host").textContent =
+    currentLocation.host;
+
+document.getElementById("hostname").textContent =
+    currentLocation.hostname;
+
+document.getElementById("port").textContent =
+    currentLocation.port || "Default";
+
+document.getElementById("pathname").textContent =
+    currentLocation.pathname;
+
+
+// Reload the current page
+function reloadPage() {
+    location.reload();
+}
+
+
+// Navigate to another website
+function goToGoogle() {
+    location.href = "https://www.google.com";
+}
+
+</script>
+
+</body>
+</html>

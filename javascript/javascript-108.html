@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Offline Status</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+        }
+
+        #status {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 25px 0;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Internet Connection Status</h2>
+
+    <p id="status"></p>
+
+    <button onclick="checkStatus()">
+        Check Status
+    </button>
+
+</div>
+
+<script>
+
+function checkStatus() {
+
+    let status = document.getElementById("status");
+
+    if (navigator.onLine) {
+        status.textContent = "You are Online";
+        status.style.color = "green";
+    } else {
+        status.textContent = "You are Offline";
+        status.style.color = "red";
+    }
+}
+
+// Check status when page loads
+checkStatus();
+
+// Detect when internet connection is restored
+window.addEventListener("online", function() {
+    document.getElementById("status").textContent =
+        "You are Online";
+
+    document.getElementById("status").style.color = "green";
+});
+
+// Detect when internet connection is lost
+window.addEventListener("offline", function() {
+    document.getElementById("status").textContent =
+        "You are Offline";
+
+    document.getElementById("status").style.color = "red";
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Location Object</title>
+</head>
+<body>
+
+<h1>Location Object</h1>
+
+<button onclick="showLocation()">Show Location</button>
+
+<p id="output"></p>
+
+<script>
+function showLocation() {
+    document.getElementById("output").innerHTML =
+        "Href: " + location.href + "<br>" +
+        "Hostname: " + location.hostname + "<br>" +
+        "Path: " + location.pathname + "<br>" +
+        "Protocol: " + location.protocol;
+}
+</script>
+
+</body>
+</html>

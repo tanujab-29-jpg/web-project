@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 42 - Button Animation</title>
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 80px;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border: 2px solid #4f8cff;
+            background: transparent;
+            color: white;
+            font-size: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .btn:hover {
+            color: white;
+            background: linear-gradient(90deg, #4f8cff, #ff5ca8);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px #4f8cff88;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Button Hover Animation</h1>
+
+<button class="btn">Hover Me</button>
+
+</body>
+</html>

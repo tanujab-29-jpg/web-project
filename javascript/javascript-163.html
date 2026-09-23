@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Counter</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+        }
+        .box {
+            background: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        textarea {
+            width: 90%;
+            height: 150px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    <h1>Character Counter</h1>
+
+    <textarea id="text" maxlength="200"></textarea>
+
+    <p>
+        Characters:
+        <span id="count">0</span>/200
+    </p>
+
+</div>
+
+<script>
+document.getElementById("text").addEventListener("input", function() {
+
+    document.getElementById("count").textContent =
+        this.value.length;
+
+});
+</script>
+
+</body>
+</html>

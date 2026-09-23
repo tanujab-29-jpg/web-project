@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Rows Dynamically</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 850px;
+            max-width: 90%;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+        }
+
+        .form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        input {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        button {
+            grid-column: 1 / -1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f3f3ff;
+        }
+
+        @media (max-width: 600px) {
+            .form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Add Student Rows Dynamically</h1>
+
+    <div class="form">
+
+        <input type="text" id="rollNo" placeholder="Roll Number">
+
+        <input type="text" id="name" placeholder="Student Name">
+
+        <input type="text" id="course" placeholder="Course">
+
+        <input type="number" id="marks" placeholder="Marks">
+
+        <button onclick="addRow()">Add Student</button>
+
+    </div>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentTable">
+
+            <tr>
+                <td>101</td>
+                <td>Anjali</td>
+                <td>B.Tech CSE</td>
+                <td>85</td>
+            </tr>
+
+            <tr>
+                <td>102</td>
+                <td>Rahul</td>
+                <td>B.Tech CSE</td>
+                <td>91</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script>
+
+function addRow() {
+
+    const rollNo = document.getElementById("rollNo").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const course = document.getElementById("course").value.trim();
+    const marks = document.getElementById("marks").value.trim();
+
+    if (rollNo === "" || name === "" || course === "" || marks === "") {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    const tableBody = document.getElementById("studentTable");
+
+    const row = document.createElement("tr");
+
+    const rollCell = document.createElement("td");
+    rollCell.textContent = rollNo;
+
+    const nameCell = document.createElement("td");
+    nameCell.textContent = name;
+
+    const courseCell = document.createElement("td");
+    courseCell.textContent = course;
+
+    const marksCell = document.createElement("td");
+    marksCell.textContent = marks;
+
+    row.appendChild(rollCell);
+    row.appendChild(nameCell);
+    row.appendChild(courseCell);
+    row.appendChild(marksCell);
+
+    tableBody.appendChild(row);
+
+    document.getElementById("rollNo").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("course").value = "";
+    document.getElementById("marks").value = "";
+
+    document.getElementById("rollNo").focus();
+}
+
+</script>
+
+</body>
+</html>

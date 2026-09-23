@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modal Popup</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 60px;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+        }
+        button {
+            padding: 12px 25px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            width: 350px;
+        }
+        .close {
+            float: right;
+            cursor: pointer;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Modal Popup</h1>
+
+<button onclick="openModal()">Open Modal</button>
+
+<div class="modal" id="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2>Hello!</h2>
+        <p>This is a modal popup created using JavaScript.</p>
+
+    </div>
+
+</div>
+
+<script>
+function openModal() {
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("modal");
+
+    if (event.target === modal) {
+        closeModal();
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Student Table</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 800px;
+            max-width: 90%;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 14px;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f1f3ff;
+        }
+
+        button {
+            display: block;
+            margin: 25px auto 0;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Details</h1>
+
+        <div id="tableContainer"></div>
+
+        <button onclick="createTable()">
+            Create Student Table
+        </button>
+
+    </div>
+
+    <script>
+
+        const students = [
+            {
+                rollNo: "101",
+                name: "Anjali",
+                course: "B.Tech CSE",
+                marks: 85
+            },
+            {
+                rollNo: "102",
+                name: "Rahul",
+                course: "B.Tech CSE",
+                marks: 91
+            },
+            {
+                rollNo: "103",
+                name: "Priya",
+                course: "B.Tech CSE",
+                marks: 78
+            },
+            {
+                rollNo: "104",
+                name: "Arun",
+                course: "B.Tech CSE",
+                marks: 88
+            }
+        ];
+
+        function createTable() {
+
+            const container =
+                document.getElementById("tableContainer");
+
+            container.innerHTML = "";
+
+            const table = document.createElement("table");
+
+            const thead = document.createElement("thead");
+            const headerRow = document.createElement("tr");
+
+            const headers = [
+                "Roll No",
+                "Name",
+                "Course",
+                "Marks"
+            ];
+
+            headers.forEach(function(header) {
+
+                const th = document.createElement("th");
+
+                th.textContent = header;
+
+                headerRow.appendChild(th);
+
+            });
+
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+
+            const tbody = document.createElement("tbody");
+
+            students.forEach(function(student) {
+
+                const row = document.createElement("tr");
+
+                const rollCell = document.createElement("td");
+                rollCell.textContent = student.rollNo;
+
+                const nameCell = document.createElement("td");
+                nameCell.textContent = student.name;
+
+                const courseCell = document.createElement("td");
+                courseCell.textContent = student.course;
+
+                const marksCell = document.createElement("td");
+                marksCell.textContent = student.marks;
+
+                row.appendChild(rollCell);
+                row.appendChild(nameCell);
+                row.appendChild(courseCell);
+                row.appendChild(marksCell);
+
+                tbody.appendChild(row);
+
+            });
+
+            table.appendChild(tbody);
+
+            container.appendChild(table);
+        }
+
+    </script>
+
+</body>
+</html>

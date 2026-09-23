@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mouse Move</title>
+<style>
+body{font-family:Arial;text-align:center}
+#area{height:300px;background:#667eea;color:white;padding:30px}
+</style>
+</head>
+<body>
+
+<h1>onmousemove Event</h1>
+
+<div id="area" onmousemove="move(event)">
+Move your mouse here
+</div>
+
+<p id="position"></p>
+
+<script>
+function move(event){
+    document.getElementById("position").textContent =
+        "X: " + event.clientX + " | Y: " + event.clientY;
+}
+</script>
+
+</body>
+</html>

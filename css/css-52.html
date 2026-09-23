@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 52 - Responsive Footer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        footer {
+            background: #101f38;
+            padding: 40px 10%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-box {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-box h2 {
+            color: #4f8cff;
+        }
+
+        .footer-box a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .footer-box a:hover {
+            color: #ff5ca8;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #ffffff33;
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            footer {
+                text-align: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <h1>Responsive Website</h1>
+    <p>Scroll down to view the responsive footer.</p>
+</main>
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-box">
+            <h2>About</h2>
+            <p>We create modern and responsive websites.</p>
+        </div>
+
+        <div class="footer-box">
+            <h2>Quick Links</h2>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+        </div>
+
+        <div class="footer-box">
+            <h2>Contact</h2>
+            <p>Email: student@example.com</p>
+            <p>Phone: 9876543210</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 My Website. All Rights Reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>

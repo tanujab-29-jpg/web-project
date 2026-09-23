@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>Typing Test</title></head>
+<body>
+
+<h1>Keyboard Typing Test</h1>
+
+<p id="sentence">
+JavaScript is a powerful programming language.
+</p>
+
+<textarea id="input" rows="5" cols="50"></textarea>
+
+<h3 id="result"></h3>
+
+<script>
+const sentence=document.getElementById("sentence").textContent.trim();
+
+document.getElementById("input").addEventListener("input",function(){
+
+    const typed=this.value;
+
+    if(typed===sentence){
+        document.getElementById("result").textContent=
+            "Completed successfully!";
+    }else{
+        document.getElementById("result").textContent=
+            "Characters: "+typed.length+
+            " / "+sentence.length;
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clear localStorage</title>
+</head>
+<body>
+
+<h1>Clear All localStorage</h1>
+
+<button onclick="clearStorage()">Clear Storage</button>
+
+<p id="output"></p>
+
+<script>
+function clearStorage() {
+    localStorage.clear();
+
+    document.getElementById("output").textContent =
+        "All localStorage data cleared.";
+}
+</script>
+
+</body>
+</html>

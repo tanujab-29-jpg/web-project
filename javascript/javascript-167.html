@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo CRUD</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        input {
+            padding: 12px;
+            width: 60%;
+        }
+        button {
+            padding: 10px;
+            margin: 3px;
+            border: none;
+            border-radius: 5px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+        }
+        li {
+            padding: 10px;
+            margin: 8px;
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>To-Do Manager</h1>
+
+    <input id="task" placeholder="Enter task">
+    <button onclick="addTask()">Add</button>
+
+    <ul id="list"></ul>
+
+</div>
+
+<script>
+function addTask() {
+
+    const input = document.getElementById("task");
+    const value = input.value.trim();
+
+    if (value === "") {
+        alert("Enter a task");
+        return;
+    }
+
+    createTask(value);
+
+    input.value = "";
+}
+
+function createTask(value) {
+
+    const li = document.createElement("li");
+
+    const span = document.createElement("span");
+    span.textContent = value;
+
+    const edit = document.createElement("button");
+    edit.textContent = "Edit";
+
+    edit.onclick = function() {
+
+        const newValue = prompt(
+            "Edit task:",
+            span.textContent
+        );
+
+        if (newValue && newValue.trim() !== "") {
+            span.textContent = newValue.trim();
+        }
+    };
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    deleteButton.onclick = function() {
+        li.remove();
+    };
+
+    li.appendChild(span);
+    li.appendChild(edit);
+    li.appendChild(deleteButton);
+
+    document.getElementById("list").appendChild(li);
+}
+</script>
+
+</body>
+</html>

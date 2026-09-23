@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>74 - Input Event</title>
+</head>
+<body>
+
+<h2>Live Input</h2>
+
+<input type="text" oninput="displayText(this.value)">
+
+<p id="result"></p>
+
+<script>
+function displayText(value) {
+    document.getElementById("result").innerHTML =
+        "You typed: " + value;
+}
+</script>
+
+</body>
+</html>

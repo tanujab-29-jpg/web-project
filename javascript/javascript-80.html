@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>80 - Mouse Coordinates</title>
+</head>
+<body>
+
+<h2>Move your mouse</h2>
+
+<p id="result">X: 0, Y: 0</p>
+
+<script>
+document.addEventListener("mousemove", function(event) {
+    document.getElementById("result").innerHTML =
+        "X: " + event.clientX +
+        ", Y: " + event.clientY;
+});
+</script>
+
+</body>
+</html>

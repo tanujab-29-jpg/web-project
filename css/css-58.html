@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 58 - Travel Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        nav {
+            position: absolute;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        nav h2 {
+            color: #4f8cff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            min-height: 650px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 30px;
+            background:
+                linear-gradient(#07111f99, #07111f99),
+                url("https://picsum.photos/1600/900?travel");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            color: #ff5ca8;
+        }
+
+        .hero button {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #4f8cff, #ff5ca8);
+            color: white;
+        }
+
+        .destinations {
+            padding: 60px 8%;
+        }
+
+        .places {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .place {
+            background: #101f38;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .place img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .place div {
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .places {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>TravelGo</h2>
+
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Destinations</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>Explore The World</h1>
+        <p>Discover beautiful places and unforgettable experiences.</p>
+        <br>
+        <button>Explore Now</button>
+    </div>
+</section>
+
+<section class="destinations">
+    <h1>Popular Destinations</h1>
+
+    <div class="places">
+
+        <div class="place">
+            <img src="https://picsum.photos/600/400?41">
+            <div>
+                <h2>Paris</h2>
+                <p>Explore the city of lights.</p>
+            </div>
+        </div>
+
+        <div class="place">
+            <img src="https://picsum.photos/600/400?42">
+            <div>
+                <h2>Maldives</h2>
+                <p>Enjoy beautiful beaches.</p>
+            </div>
+        </div>
+
+        <div class="place">
+            <img src="https://picsum.photos/600/400?43">
+            <div>
+                <h2>Switzerland</h2>
+                <p>Experience stunning mountains.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

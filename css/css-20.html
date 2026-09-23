@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 20 - Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        header {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg,#4f8cff,#ff5ca8);
+        }
+
+        header h1 {
+            font-size: 50px;
+        }
+
+        section {
+            padding: 50px 10%;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #101f38;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            transition: .4s;
+        }
+
+        @media(max-width:700px) {
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+        <p>Web Developer | Designer | Student</p>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <br>
+
+        <p>
+            Hello! I am a computer science student interested
+            in web development and programming.
+        </p>
+    </section>
+
+    <section>
+
+        <h2>My Skills</h2>
+
+        <br>
+
+        <div class="skills">
+
+            <div class="card">
+                <h3>HTML</h3>
+                <p>Web Structure</p>
+            </div>
+
+            <div class="card">
+                <h3>CSS</h3>
+                <p>Web Styling</p>
+            </div>
+
+            <div class="card">
+                <h3>JavaScript</h3>
+                <p>Web Programming</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>Contact</h2>
+
+        <br>
+
+        <p>Email: student@example.com</p>
+
+    </section>
+
+</body>
+</html>

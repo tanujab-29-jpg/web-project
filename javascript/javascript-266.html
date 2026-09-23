@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Object localStorage</title>
+</head>
+<body>
+
+<h1>Store Object</h1>
+
+<button onclick="save()">Save Object</button>
+<button onclick="show()">Show Object</button>
+
+<p id="output"></p>
+
+<script>
+function save() {
+
+    const student = {
+        name: "Tanuja",
+        course: "CSE",
+        year: 2
+    };
+
+    localStorage.setItem(
+        "student",
+        JSON.stringify(student)
+    );
+}
+
+function show() {
+
+    const student =
+        JSON.parse(localStorage.getItem("student"));
+
+    document.getElementById("output").innerHTML =
+        student
+        ? `Name: ${student.name}<br>
+           Course: ${student.course}<br>
+           Year: ${student.year}`
+        : "No data";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            transition: background-color 0.5s;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            padding: 35px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 25px 0;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Background Color Changer</h1>
+
+        <p>
+            Click the button to change the background color.
+        </p>
+
+        <button onclick="changeColor()">
+            Change Color
+        </button>
+
+        <button onclick="resetColor()">
+            Reset
+        </button>
+
+    </div>
+
+    <script>
+
+        function changeColor() {
+
+            document.body.style.backgroundColor = "#667eea";
+
+        }
+
+        function resetColor() {
+
+            document.body.style.backgroundColor = "#f2f2f2";
+
+        }
+
+    </script>
+
+</body>
+</html>

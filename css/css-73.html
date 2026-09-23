@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 73 - Clamp Min Max</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #07111f;
+            color: white;
+            padding: 30px;
+        }
+
+        .container {
+            width: min(90%, 1200px);
+            margin: auto;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 5rem);
+            text-align: center;
+            color: #4f8cff;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            width: max(250px, 30%);
+            background: #101f38;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .card h2 {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            color: #ff5ca8;
+        }
+
+        .card p {
+            font-size: min(20px, 2vw);
+            line-height: 1.6;
+        }
+
+        .info {
+            margin-top: 30px;
+            padding: 25px;
+            background: #101f38;
+            border-left: 5px solid #4f8cff;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>CSS Functions</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>clamp()</h2>
+            <p>
+                Sets a value between a minimum and maximum.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>min()</h2>
+            <p>
+                Selects the smaller value from multiple values.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>max()</h2>
+            <p>
+                Selects the larger value from multiple values.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="info">
+        <h2>Responsive Design</h2>
+        <p>
+            Resize the browser window to observe the effects
+            of clamp(), min(), and max().
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>onclick Event</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 70px;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+        }
+        .box {
+            background: white;
+            padding: 40px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    <h1 id="heading">onclick Event</h1>
+
+    <p id="message">
+        Click the button.
+    </p>
+
+    <button onclick="changeText()">
+        Click Me
+    </button>
+
+</div>
+
+<script>
+function changeText() {
+
+    document.getElementById("heading").textContent =
+        "Button Clicked!";
+
+    document.getElementById("message").textContent =
+        "The onclick event has been executed.";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Remove CSS Classes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            width: 450px;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+        }
+
+        #box {
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 10px;
+            background: #eeeeee;
+            transition: 0.3s;
+        }
+
+        .highlight {
+            background: #667eea !important;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 30px !important;
+        }
+
+        button {
+            padding: 12px 18px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        #addBtn {
+            background: #28a745;
+        }
+
+        #removeBtn {
+            background: #dc3545;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>CSS Class Manipulation</h1>
+
+        <div id="box">
+            This element will change.
+        </div>
+
+        <button id="addBtn" onclick="addClass()">
+            Add CSS Class
+        </button>
+
+        <button id="removeBtn" onclick="removeClass()">
+            Remove CSS Class
+        </button>
+
+    </div>
+
+    <script>
+
+        function addClass() {
+
+            const box =
+                document.getElementById("box");
+
+            box.classList.add("highlight");
+        }
+
+
+        function removeClass() {
+
+            const box =
+                document.getElementById("box");
+
+            box.classList.remove("highlight");
+        }
+
+    </script>
+
+</body>
+</html>

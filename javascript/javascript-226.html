@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><title>Registration</title></head>
+<body>
+
+<h1>Registration</h1>
+
+<form id="form">
+
+<input id="name" required placeholder="Name"><br><br>
+<input id="email" type="email" required placeholder="Email"><br><br>
+<input id="password" type="password" required placeholder="Password"><br><br>
+<input id="confirm" type="password" required placeholder="Confirm Password"><br><br>
+
+<button>Register</button>
+
+</form>
+
+<p id="msg"></p>
+
+<script>
+document.getElementById("form").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const p=document.getElementById("password").value;
+    const c=document.getElementById("confirm").value;
+
+    if(p!==c){
+        msg.textContent="Passwords do not match";
+        return;
+    }
+
+    msg.textContent="Registration successful!";
+});
+</script>
+
+</body>
+</html>

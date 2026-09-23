@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Frequency</title>
+</head>
+<body>
+    <h2>Frequency of Characters</h2>
+
+    <script>
+        let str = "javascript";
+        let frequency = {};
+
+        for (let char of str) {
+            if (frequency[char]) {
+                frequency[char]++;
+            } else {
+                frequency[char] = 1;
+            }
+        }
+
+        document.write("String: " + str + "<br><br>");
+
+        for (let char in frequency) {
+            document.write(char + " → " + frequency[char] + "<br>");
+        }
+    </script>
+</body>
+</html>

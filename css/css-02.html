@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 02 - Selectors</title>
+
+    <style>
+        /* Universal selector */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Element selector */
+        body {
+            font-family: Arial;
+            background: #07111f;
+            color: white;
+            padding: 30px;
+        }
+
+        /* Class selector */
+        .student {
+            color: #4f8cff;
+        }
+
+        /* ID selector */
+        #special {
+            color: #ff5ca8;
+            font-size: 25px;
+        }
+
+        /* Attribute selector */
+        input[type="text"] {
+            border: 2px solid #4f8cff;
+        }
+
+        /* Grouping selector */
+        h1, h2, p {
+            margin-bottom: 15px;
+        }
+
+        input {
+            padding: 10px;
+            background: #172b4d;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Selectors</h1>
+
+    <p>This is an element selector.</p>
+
+    <p class="student">
+        This uses a class selector.
+    </p>
+
+    <p id="special">
+        This uses an ID selector.
+    </p>
+
+    <input type="text" placeholder="Attribute selector">
+
+</body>
+</html>

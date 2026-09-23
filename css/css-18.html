@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 18 - Animation</title>
+
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg,#4f8cff,#ff5ca8);
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+
+            animation: moveBox 3s infinite;
+        }
+
+        @keyframes moveBox {
+
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(300px)
+                           rotate(180deg);
+            }
+
+            100% {
+                transform: translateX(0)
+                           rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Animation</h1>
+
+    <div class="box">
+        Animate
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>78 - Add Event Listener</title>
+</head>
+<body>
+
+<h2>addEventListener()</h2>
+
+<button id="btn">Click Me</button>
+
+<p id="result"></p>
+
+<script>
+document.getElementById("btn").addEventListener("click", function() {
+    document.getElementById("result").innerHTML =
+        "Event listener executed!";
+});
+</script>
+
+</body>
+</html>

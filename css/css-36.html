@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 36 - Z Index</title>
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        .container {
+            position: relative;
+            height: 400px;
+            background: #101f38;
+            border-radius: 20px;
+        }
+
+        .box {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            display: grid;
+            place-items: center;
+            border-radius: 20px;
+            font-size: 20px;
+        }
+
+        .one {
+            background: #4f8cff;
+            left: 100px;
+            top: 80px;
+            z-index: 1;
+        }
+
+        .two {
+            background: #ff5ca8;
+            left: 180px;
+            top: 140px;
+            z-index: 2;
+        }
+
+        .three {
+            background: purple;
+            left: 260px;
+            top: 200px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Z-Index Demonstration</h1>
+
+<div class="container">
+    <div class="box one">Z-Index 1</div>
+    <div class="box two">Z-Index 2</div>
+    <div class="box three">Z-Index 3</div>
+</div>
+
+</body>
+</html>

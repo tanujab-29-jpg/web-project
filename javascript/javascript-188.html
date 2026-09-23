@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Multiple Listeners</title></head>
+<body>
+
+<button id="btn">Click Me</button>
+<p id="msg"></p>
+
+<script>
+const btn=document.getElementById("btn");
+
+btn.addEventListener("click",function(){
+    document.getElementById("msg").textContent="Button clicked";
+});
+
+btn.addEventListener("mouseover",function(){
+    btn.style.background="pink";
+});
+
+btn.addEventListener("mouseout",function(){
+    btn.style.background="";
+});
+</script>
+
+</body>
+</html>

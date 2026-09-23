@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Digits</title>
+</head>
+<body>
+
+<h2>Sum of Digits</h2>
+
+<script>
+    let number = 12345;
+    let sum = 0;
+
+    while (number > 0) {
+        sum += number % 10;
+        number = Math.floor(number / 10);
+    }
+
+    document.write("Sum of digits = " + sum);
+</script>
+
+</body>
+</html>

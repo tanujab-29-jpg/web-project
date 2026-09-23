@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Field Errors</title>
+<style>
+.error{color:red;font-size:14px}
+</style>
+</head>
+<body>
+
+<h1>Form Validation</h1>
+
+<input id="name" placeholder="Name">
+<span id="nameError" class="error"></span>
+<br><br>
+
+<input id="email" placeholder="Email">
+<span id="emailError" class="error"></span>
+<br><br>
+
+<button onclick="validate()">Submit</button>
+
+<script>
+function validate(){
+
+    nameError.textContent="";
+    emailError.textContent="";
+
+    if(!document.getElementById("name").value)
+        nameError.textContent=" Name required";
+
+    if(!document.getElementById("email").value)
+        emailError.textContent=" Email required";
+}
+</script>
+
+</body>
+</html>

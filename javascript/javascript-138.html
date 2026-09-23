@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element Dynamically</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            width: 450px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+        }
+
+        #output {
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .item {
+            background: #f1f1f1;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 5px solid #667eea;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Create HTML Element</h1>
+
+        <p>
+            Click the button to create a new element.
+        </p>
+
+        <button onclick="createElementDynamically()">
+            Add New Element
+        </button>
+
+        <div id="output"></div>
+
+    </div>
+
+    <script>
+
+        let count = 1;
+
+        function createElementDynamically() {
+
+            // Create a new div element
+            const newElement =
+                document.createElement("div");
+
+            // Add a CSS class
+            newElement.className = "item";
+
+            // Add text content
+            newElement.textContent =
+                "This is dynamically created element " + count;
+
+            // Add the element to the webpage
+            document
+                .getElementById("output")
+                .appendChild(newElement);
+
+            count++;
+        }
+
+    </script>
+
+</body>
+</html>

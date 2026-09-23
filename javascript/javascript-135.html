@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change HTML Content using innerHTML</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            width: 450px;
+            padding: 35px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+        }
+
+        #content {
+            padding: 20px;
+            margin: 20px 0;
+            background: #f2f2f2;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>innerHTML Example</h1>
+
+        <div id="content">
+            <p>This is the original content.</p>
+        </div>
+
+        <button onclick="changeContent()">
+            Change HTML Content
+        </button>
+
+    </div>
+
+    <script>
+
+        function changeContent() {
+
+            document.getElementById("content").innerHTML = `
+                <h2>Content Changed!</h2>
+                <p>
+                    This HTML content was created dynamically
+                    using <strong>innerHTML</strong>.
+                </p>
+                <a href="https://www.example.com" target="_blank">
+                    Visit Example
+                </a>
+            `;
+
+        }
+
+    </script>
+
+</body>
+</html>

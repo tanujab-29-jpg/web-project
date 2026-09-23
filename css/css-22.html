@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 22 - Login Page</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg,#07111f,#172b4d);
+            font-family: Arial;
+            color: white;
+        }
+
+        .login {
+            width: 350px;
+            padding: 40px;
+            background: rgba(255,255,255,.1);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px #0008;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border: 1px solid #4f8cff;
+            border-radius: 10px;
+            background: #101f38;
+            color: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg,#4f8cff,#ff5ca8);
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="login">
+
+        <h1>Login</h1>
+
+        <input type="email" placeholder="Email">
+
+        <input type="password" placeholder="Password">
+
+        <button type="submit">Login</button>
+
+    </form>
+
+</body>
+</html>

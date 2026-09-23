@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 14 - Flexbox</title>
+
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            min-height: 400px;
+            background: #101f38;
+            padding: 30px;
+        }
+
+        .box {
+            width: 180px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg,#4f8cff,#ff5ca8);
+            border-radius: 20px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Flexbox</h1>
+
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+
+</body>
+</html>

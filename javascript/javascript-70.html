@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>70 - Mouse Events</title>
+</head>
+<body>
+
+<h2 id="text"
+    onmouseover="mouseOver()"
+    onmouseout="mouseOut()">
+    Move your mouse over this text
+</h2>
+
+<script>
+function mouseOver() {
+    document.getElementById("text").innerHTML =
+        "Mouse is over the text!";
+}
+
+function mouseOut() {
+    document.getElementById("text").innerHTML =
+        "Mouse moved away!";
+}
+</script>
+
+</body>
+</html>

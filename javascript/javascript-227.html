@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head><title>College Admission</title></head>
+<body>
+
+<h1>College Admission Form</h1>
+
+<form id="form">
+
+<input id="name" placeholder="Student Name" required><br><br>
+
+<input id="email" type="email" placeholder="Email" required><br><br>
+
+<input id="phone" placeholder="Mobile Number" required><br><br>
+
+<input id="marks" type="number" placeholder="12th Marks" required><br><br>
+
+<select id="course" required>
+<option value="">Select Course</option>
+<option>B.Tech CSE</option>
+<option>B.Tech ECE</option>
+</select><br><br>
+
+<button>Apply</button>
+
+</form>
+
+<p id="msg"></p>
+
+<script>
+document.getElementById("form").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const phone=document.getElementById("phone").value;
+    const marks=Number(document.getElementById("marks").value);
+
+    if(!/^[6-9]\d{9}$/.test(phone)){
+        msg.textContent="Invalid mobile number";
+        return;
+    }
+
+    if(marks<0 || marks>100){
+        msg.textContent="Invalid marks";
+        return;
+    }
+
+    msg.textContent="Admission form submitted successfully!";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Offline</title>
+</head>
+<body>
+
+<h1>Internet Connection Status</h1>
+
+<h2 id="status"></h2>
+
+<script>
+function updateStatus() {
+    document.getElementById("status").textContent =
+        navigator.onLine ? "You are Online" : "You are Offline";
+}
+
+updateStatus();
+
+window.addEventListener("online", updateStatus);
+window.addEventListener("offline", updateStatus);
+</script>
+
+</body>
+</html>

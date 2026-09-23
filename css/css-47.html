@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 47 - Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background: #101f38;
+            padding: 30px 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            margin: 8px 0;
+            border-radius: 10px;
+        }
+
+        .sidebar a:hover {
+            background: #4f8cff;
+        }
+
+        .main {
+            padding: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            padding: 30px;
+            background: #101f38;
+            border-radius: 20px;
+        }
+
+        .number {
+            font-size: 35px;
+            color: #ff5ca8;
+            font-weight: bold;
+        }
+
+        @media (max-width: 800px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <h2>Dashboard</h2>
+        <a href="#">Home</a>
+        <a href="#">Students</a>
+        <a href="#">Courses</a>
+        <a href="#">Reports</a>
+        <a href="#">Settings</a>
+    </aside>
+
+    <main class="main">
+        <h1>Student Dashboard</h1>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Total Students</h3>
+                <div class="number">250</div>
+            </div>
+
+            <div class="card">
+                <h3>Courses</h3>
+                <div class="number">18</div>
+            </div>
+
+            <div class="card">
+                <h3>Assignments</h3>
+                <div class="number">42</div>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>

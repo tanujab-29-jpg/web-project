@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Coordinates</title>
+</head>
+<body>
+
+<h1>Current Coordinates</h1>
+
+<button onclick="getCoordinates()">Get Coordinates</button>
+
+<p id="output"></p>
+
+<script>
+function getCoordinates() {
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        document.getElementById("output").innerHTML =
+            "Latitude: " + latitude + "<br>" +
+            "Longitude: " + longitude;
+
+    }, function() {
+
+        document.getElementById("output").textContent =
+            "Location permission denied or unavailable.";
+
+    });
+}
+</script>
+
+</body>
+</html>

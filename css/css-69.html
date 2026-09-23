@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 69 - Sliding Animation</title>
+    <style>
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 50px;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .slider {
+            display: flex;
+            gap: 25px;
+            width: max-content;
+            animation: slide 12s linear infinite;
+            margin-top: 60px;
+        }
+
+        .card {
+            width: 280px;
+            height: 180px;
+            padding: 30px;
+            background: linear-gradient(135deg, #4f8cff, #ff5ca8);
+            border-radius: 20px;
+            text-align: center;
+            display: grid;
+            place-items: center;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(100vw);
+            }
+
+            to {
+                transform: translateX(-1500px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Sliding Card Animation</h1>
+
+<div class="slider">
+
+    <div class="card">
+        <h2>HTML</h2>
+    </div>
+
+    <div class="card">
+        <h2>CSS</h2>
+    </div>
+
+    <div class="card">
+        <h2>JavaScript</h2>
+    </div>
+
+    <div class="card">
+        <h2>Python</h2>
+    </div>
+
+</div>
+
+</body>
+</html>

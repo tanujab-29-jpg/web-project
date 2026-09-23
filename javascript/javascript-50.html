@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LCM</title>
+</head>
+<body>
+    <h2>Least Common Multiple</h2>
+
+    <script>
+        let a = 12;
+        let b = 18;
+
+        function gcd(x, y) {
+            while (y !== 0) {
+                let temp = y;
+                y = x % y;
+                x = temp;
+            }
+            return Math.abs(x);
+        }
+
+        let lcm = Math.abs(a * b) / gcd(a, b);
+
+        document.write("LCM of " + a + " and " + b + " = " + lcm);
+    </script>
+</body>
+</html>

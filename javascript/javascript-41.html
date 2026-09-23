@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inheritance</title>
+</head>
+<body>
+
+<h2>JavaScript Inheritance</h2>
+
+<script>
+
+    class Person {
+
+        constructor(name) {
+            this.name = name;
+        }
+
+        displayName() {
+            return "Name: " + this.name;
+        }
+    }
+
+    class Student extends Person {
+
+        constructor(name, course) {
+            super(name);
+            this.course = course;
+        }
+
+        displayStudent() {
+            return this.displayName() +
+                   "<br>Course: " + this.course;
+        }
+    }
+
+    let student = new Student(
+        "Tanuja",
+        "B.Tech CSE"
+    );
+
+    document.write(student.displayStudent());
+
+</script>
+
+</body>
+</html>

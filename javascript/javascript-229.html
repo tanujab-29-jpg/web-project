@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head><title>Feedback Form</title></head>
+<body>
+
+<h1>Feedback Form</h1>
+
+<form id="form">
+
+<input id="name" required placeholder="Name"><br><br>
+
+<select id="rating" required>
+<option value="">Rating</option>
+<option>Excellent</option>
+<option>Good</option>
+<option>Average</option>
+<option>Poor</option>
+</select><br><br>
+
+<textarea id="feedback" required placeholder="Feedback"></textarea><br><br>
+
+<button>Submit Feedback</button>
+
+</form>
+
+<p id="msg"></p>
+
+<script>
+document.getElementById("form").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    if(document.getElementById("feedback").value.trim().length<10){
+        msg.textContent="Feedback must contain at least 10 characters.";
+        return;
+    }
+
+    msg.textContent="Thank you for your feedback!";
+});
+</script>
+
+</body>
+</html>

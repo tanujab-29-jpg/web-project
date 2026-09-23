@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 15 - Grid</title>
+
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .box {
+            padding: 50px;
+            text-align: center;
+            background: linear-gradient(135deg,#4f8cff,#ff5ca8);
+            border-radius: 20px;
+            font-size: 25px;
+        }
+
+        @media(max-width:700px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Grid Layout</h1>
+
+    <div class="grid">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+
+</body>
+</html>

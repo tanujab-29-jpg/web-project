@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>71 - Mouse Down Up</title>
+</head>
+<body>
+
+<h2 id="message"
+    onmousedown="mouseDown()"
+    onmouseup="mouseUp()">
+    Press and release the mouse here
+</h2>
+
+<script>
+function mouseDown() {
+    document.getElementById("message").innerHTML =
+        "Mouse button is pressed!";
+}
+
+function mouseUp() {
+    document.getElementById("message").innerHTML =
+        "Mouse button is released!";
+}
+</script>
+
+</body>
+</html>

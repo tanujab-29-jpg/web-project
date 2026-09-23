@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 61 - Grid Template Areas</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 80px 1fr 70px;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+            min-height: 700px;
+            gap: 15px;
+        }
+
+        header {
+            grid-area: header;
+            background: #101f38;
+            border-radius: 15px;
+            padding: 25px;
+            color: #4f8cff;
+        }
+
+        aside {
+            grid-area: sidebar;
+            background: #101f38;
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        main {
+            grid-area: main;
+            background: #101f38;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        footer {
+            grid-area: footer;
+            background: #101f38;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        aside a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+        }
+
+        aside a:hover {
+            background: #ff5ca8;
+        }
+
+        @media (max-width: 650px) {
+            .layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "main"
+                    "footer";
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="layout">
+
+    <header>
+        <h1>My Website</h1>
+    </header>
+
+    <aside>
+        <h2>Menu</h2>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Courses</a>
+        <a href="#">Contact</a>
+    </aside>
+
+    <main>
+        <h1>CSS Grid Template Areas</h1>
+        <p>
+            This webpage demonstrates how grid-template-areas
+            can be used to create structured layouts.
+        </p>
+    </main>
+
+    <footer>
+        © 2026 My Website
+    </footer>
+
+</div>
+
+</body>
+</html>

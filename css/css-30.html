@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 30 - Background Images</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #07111f;
+            color: white;
+        }
+
+        .hero {
+            height: 500px;
+
+            background-image:
+                linear-gradient(#0008,#0008),
+                url("https://picsum.photos/1600/900");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            display: grid;
+            place-items: center;
+
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <div>
+            <h1>Background Image</h1>
+
+            <p>
+                Demonstration of background-image,
+                background-size and background-position.
+            </p>
+        </div>
+
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date and Math Objects</title>
+</head>
+<body>
+
+    <h2>JavaScript Date and Math Objects</h2>
+
+    <script>
+        // Date Object
+        let today = new Date();
+
+        document.write("<h3>Date Object</h3>");
+        document.write("Current Date and Time: " + today + "<br>");
+        document.write("Year: " + today.getFullYear() + "<br>");
+        document.write("Month: " + (today.getMonth() + 1) + "<br>");
+        document.write("Date: " + today.getDate() + "<br>");
+        document.write("Day: " + today.getDay() + "<br>");
+        document.write("Hours: " + today.getHours() + "<br>");
+        document.write("Minutes: " + today.getMinutes() + "<br>");
+
+        // Math Object
+        let number = 25;
+
+        document.write("<h3>Math Object</h3>");
+        document.write("Square Root of 25: " + Math.sqrt(number) + "<br>");
+        document.write("Power (25²): " + Math.pow(number, 2) + "<br>");
+        document.write("Absolute Value of -25: " + Math.abs(-25) + "<br>");
+        document.write("Round 12.6: " + Math.round(12.6) + "<br>");
+        document.write("Ceil 12.3: " + Math.ceil(12.3) + "<br>");
+        document.write("Floor 12.8: " + Math.floor(12.8) + "<br>");
+        document.write("Maximum of 10, 20, 30: " + Math.max(10, 20, 30) + "<br>");
+        document.write("Minimum of 10, 20, 30: " + Math.min(10, 20, 30) + "<br>");
+        document.write("Random Number: " + Math.random() + "<br>");
+    </script>
+
+</body>
+</html>

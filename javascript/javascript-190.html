@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Event Capturing</title></head>
+<body>
+
+<div id="parent" style="padding:40px;background:#667eea">
+    Parent
+    <button id="child">Child</button>
+</div>
+
+<p id="msg"></p>
+
+<script>
+document.getElementById("parent").addEventListener(
+    "click",
+    function(){
+        document.getElementById("msg").textContent=
+            "Parent executed first using capturing";
+    },
+    true
+);
+
+document.getElementById("child").addEventListener("click",function(){
+    alert("Child clicked");
+});
+</script>
+
+</body>
+</html>

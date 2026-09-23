@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML CSS JavaScript Practical Programs</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a, #312e81);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #dbeafe;
+        }
+
+        /* Main container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px 0 70px;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+
+            font-size: 34px;
+            font-weight: bold;
+        }
+
+        .card h2 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #dbeafe;
+            line-height: 1.6;
+            min-height: 75px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 25px;
+
+            color: white;
+            text-decoration: none;
+
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+
+            background: rgba(255, 255, 255, 0.15);
+
+            transition: background 0.3s ease,
+                        transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.28);
+            transform: scale(1.05);
+        }
+
+        /* Information section */
+        .info {
+            margin-top: 50px;
+            padding: 30px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .info h2 {
+            margin-bottom: 12px;
+        }
+
+        .info p {
+            color: #dbeafe;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #bfdbfe;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .cards {
+                grid-template-columns: 1fr;
+                max-width: 550px;
+                margin: auto;
+            }
+
+            header h1 {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            header {
+                padding-top: 45px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>HTML, CSS & JavaScript</h1>
+        <p>Practical Programs Website</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <section class="cards">
+
+            <!-- HTML Card -->
+            <div class="card">
+                <div class="icon">&lt;/&gt;</div>
+
+                <h2>HTML Programs</h2>
+
+                <p>
+                    Explore HTML fundamentals including headings,
+                    lists, tables, forms, multimedia, semantic elements
+                    and HTML5 features.
+                </p>
+
+                <a href="html/index.html" class="btn">
+                    View HTML Programs
+                </a>
+            </div>
+
+            <!-- CSS Card -->
+            <div class="card">
+                <div class="icon">CSS</div>
+
+                <h2>CSS Programs</h2>
+
+                <p>
+                    Practice CSS selectors, colors, typography,
+                    box model, layouts, Flexbox, Grid, animations
+                    and responsive design.
+                </p>
+
+                <a href="css/index.html" class="btn">
+                    View CSS Programs
+                </a>
+            </div>
+
+            <!-- JavaScript Card -->
+            <div class="card">
+                <div class="icon">JS</div>
+
+                <h2>JavaScript Programs</h2>
+
+                <p>
+                    Learn JavaScript programming, DOM manipulation,
+                    events, forms, validation, browser features,
+                    Web Storage and mini projects.
+                </p>
+
+                <a href="javascript/index.html" class="btn">
+                    View JavaScript Programs
+                </a>
+            </div>
+
+        </section>
+
+        <!-- Information -->
+        <section class="info">
+
+            <h2>About This Project</h2>
+
+            <p>
+                This website contains practical programs created as part
+                of the HTML, CSS and JavaScript practical assignment.
+                Each program is maintained as a separate HTML file and
+                can be opened directly in a web browser.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 HTML CSS & JavaScript Practical Programs
+        </p>
+    </footer>
+
+</body>
+</html>
+

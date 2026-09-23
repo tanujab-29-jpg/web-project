@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>87 - preventDefault</title>
+</head>
+<body>
+
+<a href="https://www.google.com" id="link">Open Google</a>
+
+<p id="result"></p>
+
+<script>
+document.getElementById("link").addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    document.getElementById("result").innerHTML =
+        "Default link action was prevented.";
+});
+</script>
+
+</body>
+</html>

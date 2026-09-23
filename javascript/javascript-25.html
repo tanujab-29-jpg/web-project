@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Hide Element</title>
+</head>
+<body>
+
+<h2>Show / Hide Element</h2>
+
+<p id="text">
+    This paragraph can be shown or hidden.
+</p>
+
+<button onclick="showText()">Show</button>
+<button onclick="hideText()">Hide</button>
+
+<script>
+    function showText() {
+        document.getElementById("text").style.display = "block";
+    }
+
+    function hideText() {
+        document.getElementById("text").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

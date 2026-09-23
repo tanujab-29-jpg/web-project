@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle CSS Class</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            width: 450px;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+        }
+
+        #box {
+            background: #eeeeee;
+            color: #333;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 10px;
+            font-size: 20px;
+            transition: 0.4s;
+        }
+
+        .active {
+            background: #667eea !important;
+            color: white !important;
+            transform: scale(1.05);
+            border-radius: 30px !important;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Toggle CSS Class</h1>
+
+        <div id="box">
+            Click the button to toggle my style.
+        </div>
+
+        <button onclick="toggleStyle()">
+            Toggle Style
+        </button>
+
+    </div>
+
+    <script>
+
+        function toggleStyle() {
+
+            const box =
+                document.getElementById("box");
+
+            box.classList.toggle("active");
+
+        }
+
+    </script>
+
+</body>
+</html>

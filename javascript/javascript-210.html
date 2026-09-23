@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>Radio Validation</title></head>
+<body>
+
+<h1>Course Selection</h1>
+
+<label><input type="radio" name="course"> CSE</label>
+<label><input type="radio" name="course"> ECE</label>
+<label><input type="radio" name="course"> IT</label>
+
+<br><br>
+
+<button onclick="validate()">Submit</button>
+
+<p id="msg"></p>
+
+<script>
+function validate(){
+
+    const selected=document.querySelector(
+        'input[name="course"]:checked'
+    );
+
+    msg.textContent=selected?
+        "Course selected":
+        "Please select a course";
+}
+</script>
+
+</body>
+</html>

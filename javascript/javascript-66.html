@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regular Expressions</title>
+</head>
+<body>
+    <h2>Regular Expression Demonstration</h2>
+
+    <script>
+        let text = "My phone number is 9876543210.";
+
+        // Search for a 10-digit number
+        let pattern = /\d{10}/;
+
+        // Test
+        let result = pattern.test(text);
+
+        document.write("Text: " + text + "<br>");
+        document.write("Contains a 10-digit number: " + result + "<br><br>");
+
+        // Match
+        let match = text.match(pattern);
+        document.write("Matched number: " + match[0] + "<br><br>");
+
+        // Replace
+        let replaced = text.replace(pattern, "XXXXXXXXXX");
+        document.write("After replacement: " + replaced);
+    </script>
+</body>
+</html>

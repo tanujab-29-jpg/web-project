@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Style Change</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            width: 450px;
+            padding: 35px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+        }
+
+        #box {
+            background: #eeeeee;
+            color: #333333;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Dynamic Style Change</h1>
+
+        <div id="box">
+            Change my style using JavaScript!
+        </div>
+
+        <button onclick="changeStyle()">
+            Change Style
+        </button>
+
+        <button onclick="resetStyle()">
+            Reset Style
+        </button>
+
+    </div>
+
+    <script>
+
+        function changeStyle() {
+
+            const box = document.getElementById("box");
+
+            box.style.backgroundColor = "#667eea";
+            box.style.color = "white";
+            box.style.fontSize = "28px";
+            box.style.fontWeight = "bold";
+            box.style.border = "4px solid #764ba2";
+            box.style.borderRadius = "30px";
+            box.style.padding = "40px";
+            box.style.transform = "scale(1.05)";
+        }
+
+        function resetStyle() {
+
+            const box = document.getElementById("box");
+
+            box.style.backgroundColor = "#eeeeee";
+            box.style.color = "#333333";
+            box.style.fontSize = "20px";
+            box.style.fontWeight = "normal";
+            box.style.border = "none";
+            box.style.borderRadius = "10px";
+            box.style.padding = "25px";
+            box.style.transform = "scale(1)";
+        }
+
+    </script>
+
+</body>
+</html>

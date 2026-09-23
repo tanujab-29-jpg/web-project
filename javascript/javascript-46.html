@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login {
+            width: 100%;
+            max-width: 400px;
+            background: #101f38;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4f8cff;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #ff5ca8;
+            color: white;
+            cursor: pointer;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login">
+
+    <h2>Login</h2>
+
+    <form onsubmit="return login()">
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+        >
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+
+    function login() {
+
+        let email =
+            document.getElementById("email").value;
+
+        let password =
+            document.getElementById("password").value;
+
+        if (email === "" || password === "") {
+
+            document.getElementById("message").innerHTML =
+                "Please fill all fields.";
+
+            return false;
+        }
+
+        if (password.length < 6) {
+
+            document.getElementById("message").innerHTML =
+                "Password must contain at least 6 characters.";
+
+            return false;
+        }
+
+        document.getElementById("message").innerHTML =
+            "Login successful!";
+
+        return false;
+    }
+
+</script>
+
+</body>
+</html>

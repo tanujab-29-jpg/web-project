@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 62 - Flexbox Alignment</title>
+    <style>
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            min-height: 400px;
+            background: #101f38;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            display: grid;
+            place-items: center;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #4f8cff, #ff5ca8);
+            font-size: 22px;
+        }
+
+        .one {
+            order: 3;
+        }
+
+        .two {
+            order: 1;
+        }
+
+        .three {
+            order: 2;
+        }
+
+        .four {
+            order: 4;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Flexbox Alignment and Ordering</h1>
+
+<div class="container">
+    <div class="box one">1</div>
+    <div class="box two">2</div>
+    <div class="box three">3</div>
+    <div class="box four">4</div>
+</div>
+
+</body>
+</html>

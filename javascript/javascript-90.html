@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>90 - Remove Event Listener</title>
+</head>
+<body>
+
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+
+<p id="result"></p>
+
+<script>
+let result = document.getElementById("result");
+
+function message() {
+    result.innerHTML = "Button event is active.";
+}
+
+document.getElementById("start").addEventListener("click", message);
+
+document.getElementById("stop").addEventListener("click", function() {
+    document.getElementById("start").removeEventListener("click", message);
+    result.innerHTML = "Event listener removed.";
+});
+</script>
+
+</body>
+</html>

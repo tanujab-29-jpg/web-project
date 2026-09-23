@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 55 - College Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        header {
+            background: #101f38;
+            padding: 20px 8%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: #4f8cff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #ff5ca8;
+        }
+
+        .hero {
+            min-height: 500px;
+            padding: 80px 10%;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(#07111fcc, #07111fcc),
+                url("https://picsum.photos/1600/800");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            color: #4f8cff;
+        }
+
+        .section {
+            padding: 60px 8%;
+        }
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            padding: 30px;
+            background: #101f38;
+            border-radius: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #101f38;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .courses {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <h2>ABC College</h2>
+
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Courses</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Welcome to ABC College</h1>
+        <p>Learn. Innovate. Succeed.</p>
+    </div>
+</section>
+
+<section class="section">
+    <h1>Our Courses</h1>
+
+    <div class="courses">
+        <div class="card">
+            <h2>B.Tech CSE</h2>
+            <p>Computer Science and Engineering.</p>
+        </div>
+
+        <div class="card">
+            <h2>B.Tech ECE</h2>
+            <p>Electronics and Communication.</p>
+        </div>
+
+        <div class="card">
+            <h2>BCA</h2>
+            <p>Bachelor of Computer Applications.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 ABC College
+</footer>
+
+</body>
+</html>

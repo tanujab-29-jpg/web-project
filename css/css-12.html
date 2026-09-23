@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 12 - Lists and Tables</title>
+
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        ol {
+            list-style-type: upper-roman;
+        }
+
+        li {
+            padding: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #4f8cff;
+            text-align: center;
+        }
+
+        th {
+            background: #4f8cff;
+        }
+
+        tr:nth-child(even) {
+            background: #172b4d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Lists</h1>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <ol>
+        <li>Python</li>
+        <li>C Programming</li>
+        <li>Java</li>
+    </ol>
+
+    <h1>Student Table</h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Marks</th>
+        </tr>
+
+        <tr>
+            <td>Ravi</td>
+            <td>CSE</td>
+            <td>85</td>
+        </tr>
+
+        <tr>
+            <td>Priya</td>
+            <td>CSE</td>
+            <td>92</td>
+        </tr>
+    </table>
+
+</body>
+</html>

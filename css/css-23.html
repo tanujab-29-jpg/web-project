@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 23 - Product Card</title>
+
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        .card {
+            width: 300px;
+            margin: auto;
+            background: #101f38;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: .4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px #0008;
+        }
+
+        .product {
+            height: 200px;
+            background: linear-gradient(135deg,#4f8cff,#ff5ca8);
+            border-radius: 15px;
+            display: grid;
+            place-items: center;
+            font-size: 40px;
+        }
+
+        .price {
+            color: #ff5ca8;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            background: #4f8cff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="product">
+            WATCH
+        </div>
+
+        <h2>Smart Watch</h2>
+
+        <p>Premium Smart Watch</p>
+
+        <p class="price">₹2,999</p>
+
+        <button>Add to Cart</button>
+
+    </div>
+
+</body>
+</html>

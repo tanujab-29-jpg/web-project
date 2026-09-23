@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 16 - Media Queries</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .box {
+            flex: 1;
+            padding: 50px;
+            text-align: center;
+            background: #4f8cff;
+            border-radius: 20px;
+        }
+
+        @media(max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .box {
+                background: #ff5ca8;
+            }
+        }
+
+        @media(max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="padding:30px;">Responsive Design</h1>
+
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+
+</body>
+</html>

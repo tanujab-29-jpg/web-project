@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+            padding: 50px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        input {
+            padding: 12px;
+            width: 65%;
+        }
+        button {
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        li {
+            margin: 10px;
+            padding: 10px;
+            background: #eee;
+        }
+        .delete {
+            float: right;
+            background: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>To-Do List</h1>
+
+    <input id="task" placeholder="Enter task">
+    <button onclick="addTask()">Add</button>
+
+    <ul id="list"></ul>
+
+</div>
+
+<script>
+function addTask() {
+
+    const input = document.getElementById("task");
+    const value = input.value.trim();
+
+    if (value === "") {
+        alert("Enter a task");
+        return;
+    }
+
+    const li = document.createElement("li");
+
+    li.textContent = value;
+
+    const button = document.createElement("button");
+
+    button.textContent = "Delete";
+    button.className = "delete";
+
+    button.onclick = function() {
+        li.remove();
+    };
+
+    li.appendChild(button);
+
+    document.getElementById("list").appendChild(li);
+
+    input.value = "";
+}
+</script>
+
+</body>
+</html>

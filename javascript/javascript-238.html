@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Validation Without Reload</title>
+<style>
+.error{color:red}
+.success{color:green}
+</style>
+</head>
+<body>
+
+<h1>Form Validation</h1>
+
+<form id="form">
+
+<input id="name" placeholder="Name"><br><br>
+
+<input id="email" placeholder="Email"><br><br>
+
+<input id="phone" placeholder="Phone"><br><br>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<p id="msg"></p>
+
+<script>
+document.getElementById("form").addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const name=document.getElementById("name").value.trim();
+    const email=document.getElementById("email").value.trim();
+    const phone=document.getElementById("phone").value.trim();
+
+    const message=document.getElementById("msg");
+
+    if(name===""){
+        message.className="error";
+        message.textContent="Name is required";
+        return;
+    }
+
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        message.className="error";
+        message.textContent="Invalid email";
+        return;
+    }
+
+    if(!/^[6-9]\d{9}$/.test(phone)){
+        message.className="error";
+        message.textContent="Invalid phone number";
+        return;
+    }
+
+    message.className="success";
+    message.textContent="Form submitted successfully without page reload!";
+});
+</script>
+
+</body>
+</html>

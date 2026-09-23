@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GCD</title>
+</head>
+<body>
+    <h2>Greatest Common Divisor</h2>
+
+    <script>
+        let a = 48;
+        let b = 18;
+
+        function gcd(a, b) {
+            while (b !== 0) {
+                let temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
+        }
+
+        document.write("GCD of " + a + " and " + b + " = " + gcd(a, b));
+    </script>
+</body>
+</html>

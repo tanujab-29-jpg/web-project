@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Information</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            padding: 30px;
+        }
+
+        .container {
+            width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .info {
+            padding: 12px;
+            margin: 10px 0;
+            background: #eef4ff;
+            border-radius: 5px;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Browser Information</h2>
+
+    <div class="info">
+        <span class="label">Browser:</span>
+        <span id="browser"></span>
+    </div>
+
+    <div class="info">
+        <span class="label">Platform:</span>
+        <span id="platform"></span>
+    </div>
+
+    <div class="info">
+        <span class="label">Language:</span>
+        <span id="language"></span>
+    </div>
+
+    <div class="info">
+        <span class="label">Screen Width:</span>
+        <span id="screenWidth"></span>
+    </div>
+
+    <div class="info">
+        <span class="label">Screen Height:</span>
+        <span id="screenHeight"></span>
+    </div>
+
+    <div class="info">
+        <span class="label">Current URL:</span>
+        <span id="url"></span>
+    </div>
+
+    <div class="info">
+        <span class="label">Online Status:</span>
+        <span id="online"></span>
+    </div>
+
+</div>
+
+<script>
+
+document.getElementById("browser").textContent =
+    navigator.userAgent;
+
+document.getElementById("platform").textContent =
+    navigator.platform;
+
+document.getElementById("language").textContent =
+    navigator.language;
+
+document.getElementById("screenWidth").textContent =
+    screen.width + " pixels";
+
+document.getElementById("screenHeight").textContent =
+    screen.height + " pixels";
+
+document.getElementById("url").textContent =
+    window.location.href;
+
+document.getElementById("online").textContent =
+    navigator.onLine ? "Online" : "Offline";
+
+</script>
+
+</body>
+</html>

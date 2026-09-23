@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Table Data</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+            padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background: #667eea;
+            color: white;
+        }
+        button {
+            border: none;
+            border-radius: 6px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Edit Student Data</h1>
+
+    <input id="name" placeholder="Name">
+    <input id="course" placeholder="Course">
+    <input id="marks" type="number" placeholder="Marks">
+    <button onclick="addStudent()">Add Student</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Marks</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+<script>
+function addStudent() {
+    const name = document.getElementById("name").value;
+    const course = document.getElementById("course").value;
+    const marks = document.getElementById("marks").value;
+
+    if (!name || !course || !marks) {
+        alert("Enter all details");
+        return;
+    }
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>${name}</td>
+        <td>${course}</td>
+        <td>${marks}</td>
+        <td>
+            <button onclick="editRow(this)">Edit</button>
+            <button onclick="this.parentElement.parentElement.remove()">Delete</button>
+        </td>
+    `;
+
+    document.getElementById("tableBody").appendChild(row);
+
+    document.getElementById("name").value = "";
+    document.getElementById("course").value = "";
+    document.getElementById("marks").value = "";
+}
+
+function editRow(button) {
+    const row = button.parentElement.parentElement;
+
+    const name = prompt("Enter name:", row.cells[0].textContent);
+    const course = prompt("Enter course:", row.cells[1].textContent);
+    const marks = prompt("Enter marks:", row.cells[2].textContent);
+
+    if (name && course && marks) {
+        row.cells[0].textContent = name;
+        row.cells[1].textContent = course;
+        row.cells[2].textContent = marks;
+    }
+}
+</script>
+
+</body>
+</html>

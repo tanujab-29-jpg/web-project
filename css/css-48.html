@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 48 - Two Column Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .content,
+        .sidebar {
+            padding: 30px;
+            background: #101f38;
+            border-radius: 20px;
+        }
+
+        .content h1 {
+            color: #4f8cff;
+        }
+
+        .sidebar h2 {
+            color: #ff5ca8;
+        }
+
+        @media (max-width: 700px) {
+            .layout {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="layout">
+
+    <section class="content">
+        <h1>Main Content</h1>
+        <p>
+            CSS Grid makes it easy to create two-column layouts.
+            This section contains the main content of the webpage.
+        </p>
+
+        <h2>About CSS Grid</h2>
+        <p>
+            Grid provides rows and columns for creating structured layouts.
+        </p>
+    </section>
+
+    <aside class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Latest News</p>
+        <p>Popular Posts</p>
+        <p>Useful Links</p>
+    </aside>
+
+</div>
+
+</body>
+</html>

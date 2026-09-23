@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>82 - Form Validation</title>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form id="form">
+    <input type="text" id="name" placeholder="Enter Name">
+    <br><br>
+
+    <input type="email" id="email" placeholder="Enter Email">
+    <br><br>
+
+    <button type="submit">Register</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if (name === "" || email === "") {
+        document.getElementById("result").innerHTML =
+            "Please fill all fields.";
+    } else {
+        document.getElementById("result").innerHTML =
+            "Registration successful!";
+    }
+});
+</script>
+
+</body>
+</html>

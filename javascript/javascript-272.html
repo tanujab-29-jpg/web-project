@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Theme Switcher</title>
+
+<style>
+body {
+    font-family:Arial;
+    text-align:center;
+    transition:0.3s;
+}
+
+.dark {
+    background:#222;
+    color:white;
+}
+
+button {
+    padding:10px 20px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Theme Switcher</h1>
+
+<button onclick="toggleTheme()">Dark / Light</button>
+
+<script>
+let theme = localStorage.getItem("theme");
+
+if (theme === "dark") {
+    document.body.classList.add("dark");
+}
+
+function toggleTheme() {
+
+    document.body.classList.toggle("dark");
+
+    const current =
+        document.body.classList.contains("dark")
+        ? "dark"
+        : "light";
+
+    localStorage.setItem("theme", current);
+}
+</script>
+
+</body>
+</html>

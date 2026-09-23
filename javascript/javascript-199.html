@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head><title>Student Registration</title></head>
+<body>
+
+<h1>Student Registration</h1>
+
+<form id="form">
+
+<input id="name" placeholder="Name"><br><br>
+<input id="email" placeholder="Email"><br><br>
+<input id="age" type="number" placeholder="Age"><br><br>
+<input id="phone" placeholder="Phone"><br><br>
+
+<select id="course">
+<option value="">Select Course</option>
+<option>CSE</option>
+<option>ECE</option>
+</select><br><br>
+
+<button>Register</button>
+
+</form>
+
+<p id="msg"></p>
+
+<script>
+document.getElementById("form").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const name=document.getElementById("name").value.trim();
+    const email=document.getElementById("email").value.trim();
+    const age=document.getElementById("age").value;
+    const phone=document.getElementById("phone").value.trim();
+    const course=document.getElementById("course").value;
+
+    if(!name||!email||!age||!phone||!course){
+        document.getElementById("msg").textContent=
+            "Please fill all fields.";
+        return;
+    }
+
+    document.getElementById("msg").textContent=
+        "Registration successful!";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change HTML Attributes Dynamically</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            width: 450px;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+        }
+
+        img {
+            width: 200px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        #status {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Dynamic Attributes</h1>
+
+        <img
+            id="myImage"
+            src="https://via.placeholder.com/200x130"
+            alt="Original Image"
+        >
+
+        <p id="status">
+            Original image attributes
+        </p>
+
+        <button onclick="changeAttributes()">
+            Change Attributes
+        </button>
+
+    </div>
+
+    <script>
+
+        function changeAttributes() {
+
+            const image =
+                document.getElementById("myImage");
+
+            // Change the image source
+            image.setAttribute(
+                "src",
+                "https://picsum.photos/200/130"
+            );
+
+            // Change the alt attribute
+            image.setAttribute(
+                "alt",
+                "New Random Image"
+            );
+
+            // Add a title attribute
+            image.setAttribute(
+                "title",
+                "This attribute was added using JavaScript"
+            );
+
+            // Change width attribute
+            image.setAttribute(
+                "width",
+                "250"
+            );
+
+            document.getElementById("status").textContent =
+                "Image attributes changed successfully!";
+        }
+
+    </script>
+
+</body>
+</html>

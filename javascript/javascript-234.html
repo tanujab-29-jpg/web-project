@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><title>Marks Calculator</title></head>
+<body>
+
+<h1>Marks Calculator</h1>
+
+<input id="m1" type="number" placeholder="Subject 1">
+<input id="m2" type="number" placeholder="Subject 2">
+<input id="m3" type="number" placeholder="Subject 3">
+
+<br><br>
+
+<button onclick="calculate()">Calculate</button>
+
+<div id="result"></div>
+
+<script>
+function calculate(){
+
+    const a=Number(m1.value);
+    const b=Number(m2.value);
+    const c=Number(m3.value);
+
+    const total=a+b+c;
+    const average=total/3;
+
+    let grade;
+
+    if(average>=90) grade="A+";
+    else if(average>=80) grade="A";
+    else if(average>=70) grade="B";
+    else if(average>=60) grade="C";
+    else if(average>=50) grade="D";
+    else grade="F";
+
+    result.innerHTML=`
+        <h3>Total: ${total}</h3>
+        <h3>Average: ${average.toFixed(2)}</h3>
+        <h3>Grade: ${grade}</h3>
+    `;
+}
+</script>
+
+</body>
+</html>

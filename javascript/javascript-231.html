@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multi Step Form</title>
+<style>
+.step{display:none}
+.step.active{display:block}
+</style>
+</head>
+<body>
+
+<h1>Registration</h1>
+
+<div class="step active" id="step1">
+<h2>Step 1</h2>
+<input id="name" placeholder="Name">
+<button onclick="next(2)">Next</button>
+</div>
+
+<div class="step" id="step2">
+<h2>Step 2</h2>
+<input id="email" placeholder="Email">
+<button onclick="next(3)">Next</button>
+</div>
+
+<div class="step" id="step3">
+<h2>Step 3</h2>
+<input id="phone" placeholder="Phone">
+<button onclick="finish()">Submit</button>
+</div>
+
+<p id="msg"></p>
+
+<script>
+function next(number){
+
+    document.querySelector(".active").classList.remove("active");
+
+    document.getElementById("step"+number)
+        .classList.add("active");
+}
+
+function finish(){
+
+    if(!name.value || !email.value || !phone.value){
+        msg.textContent="Please complete all fields";
+        return;
+    }
+
+    msg.textContent="Registration completed!";
+}
+</script>
+
+</body>
+</html>

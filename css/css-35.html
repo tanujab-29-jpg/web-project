@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 35 - Overflow</title>
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 250px;
+            height: 150px;
+            padding: 20px;
+            background: #101f38;
+            border: 2px solid #4f8cff;
+            border-radius: 15px;
+        }
+
+        .visible {
+            overflow: visible;
+        }
+
+        .hidden {
+            overflow: hidden;
+        }
+
+        .scroll {
+            overflow: scroll;
+        }
+
+        .auto {
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>CSS Overflow</h1>
+
+<div class="container">
+
+    <div class="box visible">
+        <h3>Visible</h3>
+        This content demonstrates the visible overflow property. 
+        Extra content can extend outside the box.
+    </div>
+
+    <div class="box hidden">
+        <h3>Hidden</h3>
+        This content demonstrates hidden overflow. 
+        Extra content outside the box is hidden.
+    </div>
+
+    <div class="box scroll">
+        <h3>Scroll</h3>
+        This content demonstrates scroll overflow. 
+        Scrollbars are available when content exceeds the box.
+    </div>
+
+    <div class="box auto">
+        <h3>Auto</h3>
+        This content demonstrates automatic overflow handling.
+        Scrollbars appear when required.
+    </div>
+
+</div>
+
+</body>
+</html>

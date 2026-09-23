@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ondblclick Event</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 70px;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+        }
+        .box {
+            background: white;
+            padding: 40px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 20px;
+        }
+        #clickBox {
+            padding: 50px;
+            background: #667eea;
+            color: white;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    <h1>ondblclick Event</h1>
+
+    <div id="clickBox" ondblclick="doubleClick()">
+        Double Click Me
+    </div>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+function doubleClick() {
+
+    const box = document.getElementById("clickBox");
+
+    box.textContent = "Double Click Detected!";
+
+    box.style.background = "#764ba2";
+
+    document.getElementById("message").textContent =
+        "The ondblclick event was executed successfully.";
+}
+</script>
+
+</body>
+</html>

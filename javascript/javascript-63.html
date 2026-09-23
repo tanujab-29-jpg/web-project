@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vowels and Consonants</title>
+</head>
+<body>
+    <h2>Count Vowels and Consonants</h2>
+
+    <script>
+        let str = "JavaScript Programming";
+        let vowels = 0;
+        let consonants = 0;
+
+        for (let char of str.toLowerCase()) {
+            if (/[a-z]/.test(char)) {
+                if ("aeiou".includes(char)) {
+                    vowels++;
+                } else {
+                    consonants++;
+                }
+            }
+        }
+
+        document.write("String: " + str + "<br>");
+        document.write("Vowels: " + vowels + "<br>");
+        document.write("Consonants: " + consonants);
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 40 - Image Hover Effect</title>
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .image-box {
+            width: 500px;
+            max-width: 100%;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .image-box img {
+            width: 100%;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .image-box:hover img {
+            transform: scale(1.2) rotate(3deg);
+            filter: brightness(0.6);
+        }
+
+        .text {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .image-box:hover .text {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Image Hover Effect</h1>
+
+<div class="image-box">
+    <img src="https://picsum.photos/800/500" alt="Sample Image">
+    <div class="text">Beautiful Image</div>
+</div>
+
+</body>
+</html>

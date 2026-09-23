@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 64 - Mobile First</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        header {
+            padding: 25px;
+            text-align: center;
+            background: #101f38;
+        }
+
+        header h1 {
+            color: #4f8cff;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            padding: 30px;
+            background: #101f38;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        /* Tablet */
+        @media (min-width: 600px) {
+            .container {
+                padding: 40px;
+            }
+
+            .cards {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .card {
+                flex: 1 1 45%;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 1000px) {
+            .container {
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .cards {
+                flex-wrap: nowrap;
+            }
+
+            .card {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mobile First Design</h1>
+    <p>Resize the browser window.</p>
+</header>
+
+<div class="container">
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>HTML</h2>
+            <p>Web structure.</p>
+        </div>
+
+        <div class="card">
+            <h2>CSS</h2>
+            <p>Web styling.</p>
+        </div>
+
+        <div class="card">
+            <h2>JavaScript</h2>
+            <p>Web programming.</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

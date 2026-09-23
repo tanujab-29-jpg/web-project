@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 51 - Fixed Sidebar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 220px;
+            height: 100vh;
+            padding: 30px 20px;
+            background: #101f38;
+        }
+
+        .sidebar h2 {
+            color: #4f8cff;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            margin: 8px 0;
+            border-radius: 10px;
+        }
+
+        .sidebar a:hover {
+            background: #ff5ca8;
+        }
+
+        .content {
+            margin-left: 220px;
+            padding: 50px;
+        }
+
+        section {
+            min-height: 500px;
+            padding: 30px;
+            margin-bottom: 30px;
+            background: #101f38;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+            }
+
+            .content {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>My Website</h2>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Courses</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+</div>
+
+<div class="content">
+
+    <section>
+        <h1>Fixed Sidebar</h1>
+        <p>
+            The sidebar remains fixed while the page content can be scrolled.
+        </p>
+    </section>
+
+    <section>
+        <h1>About</h1>
+        <p>Welcome to our website.</p>
+    </section>
+
+    <section>
+        <h1>Courses</h1>
+        <p>HTML, CSS, JavaScript and Python.</p>
+    </section>
+
+</div>
+
+</body>
+</html>

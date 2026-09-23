@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Array localStorage</title>
+</head>
+<body>
+
+<h1>Store Array</h1>
+
+<button onclick="save()">Save Array</button>
+<button onclick="show()">Show Array</button>
+
+<p id="output"></p>
+
+<script>
+function save() {
+    const subjects = ["HTML", "CSS", "JavaScript"];
+
+    localStorage.setItem(
+        "subjects",
+        JSON.stringify(subjects)
+    );
+}
+
+function show() {
+    const subjects =
+        JSON.parse(localStorage.getItem("subjects"));
+
+    document.getElementById("output").textContent =
+        subjects ? subjects.join(", ") : "No data";
+}
+</script>
+
+</body>
+</html>

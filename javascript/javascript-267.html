@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Records</title>
+</head>
+<body>
+
+<h1>Student Record System</h1>
+
+<input id="name" placeholder="Name">
+<input id="roll" placeholder="Roll Number">
+<button onclick="addStudent()">Add Student</button>
+
+<ul id="list"></ul>
+
+<script>
+function getStudents() {
+    return JSON.parse(localStorage.getItem("students")) || [];
+}
+
+function addStudent() {
+
+    const students = getStudents();
+
+    students.push({
+        name: document.getElementById("name").value,
+        roll: document.getElementById("roll").value
+    });
+
+    localStorage.setItem("students", JSON.stringify(students));
+
+    display();
+}
+
+function display() {
+
+    const students = getStudents();
+
+    document.getElementById("list").innerHTML =
+        students.map(s =>
+            `<li>${s.roll} - ${s.name}</li>`
+        ).join("");
+}
+
+display();
+</script>
+
+</body>
+</html>

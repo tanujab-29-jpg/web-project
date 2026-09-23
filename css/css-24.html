@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 24 - Photo Gallery</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 30px;
+            background: #07111f;
+            font-family: Arial;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: .4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        @media(max-width:900px) {
+            .gallery {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media(max-width:500px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Photo Gallery</h1>
+
+    <div class="gallery">
+
+        <img src="https://picsum.photos/500/400?1">
+        <img src="https://picsum.photos/500/400?2">
+        <img src="https://picsum.photos/500/400?3">
+        <img src="https://picsum.photos/500/400?4">
+        <img src="https://picsum.photos/500/400?5">
+        <img src="https://picsum.photos/500/400?6">
+        <img src="https://picsum.photos/500/400?7">
+        <img src="https://picsum.photos/500/400?8">
+
+    </div>
+
+</body>
+</html>

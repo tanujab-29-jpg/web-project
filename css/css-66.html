@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 66 - 2D and 3D Transform</title>
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            perspective: 800px;
+        }
+
+        .box {
+            width: 180px;
+            height: 180px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #4f8cff, #ff5ca8);
+            border-radius: 20px;
+            font-size: 20px;
+            transition: 0.6s;
+        }
+
+        .two-d:hover {
+            transform: rotate(20deg) scale(1.2);
+        }
+
+        .three-d:hover {
+            transform: rotateY(60deg) rotateX(20deg);
+        }
+    </style>
+</head>
+<body>
+
+<h1>2D and 3D Transformations</h1>
+
+<div class="container">
+
+    <div class="box two-d">
+        2D Transform
+    </div>
+
+    <div class="box three-d">
+        3D Transform
+    </div>
+
+</div>
+
+</body>
+</html>

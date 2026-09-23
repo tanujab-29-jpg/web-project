@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 29 - Variables</title>
+
+    <style>
+
+        :root {
+            --primary: #4f8cff;
+            --secondary: #ff5ca8;
+            --dark: #07111f;
+            --card: #101f38;
+        }
+
+        body {
+            background: var(--dark);
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid var(--primary);
+        }
+
+        h1 {
+            color: var(--primary);
+        }
+
+        button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>CSS Custom Properties</h1>
+
+        <p>
+            CSS variables allow us to store and reuse values.
+        </p>
+
+        <button>Click Me</button>
+
+    </div>
+
+</body>
+</html>

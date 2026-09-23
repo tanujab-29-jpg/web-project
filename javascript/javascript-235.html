@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>Salary Calculator</title></head>
+<body>
+
+<h1>Employee Salary</h1>
+
+<input id="basic" type="number" placeholder="Basic Salary">
+<input id="hra" type="number" placeholder="HRA %">
+<input id="da" type="number" placeholder="DA %">
+
+<button onclick="calculate()">Calculate</button>
+
+<div id="result"></div>
+
+<script>
+function calculate(){
+
+    const salary=Number(basic.value);
+    const hraAmount=salary*Number(hra.value)/100;
+    const daAmount=salary*Number(da.value)/100;
+
+    const gross=salary+hraAmount+daAmount;
+
+    result.innerHTML=`
+        <p>Basic Salary: ₹${salary}</p>
+        <p>HRA: ₹${hraAmount}</p>
+        <p>DA: ₹${daAmount}</p>
+        <h2>Gross Salary: ₹${gross}</h2>
+    `;
+}
+</script>
+
+</body>
+</html>

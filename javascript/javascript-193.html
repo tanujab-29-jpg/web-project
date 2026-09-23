@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Event Delegation</title></head>
+<body>
+
+<h1>Event Delegation</h1>
+
+<ul id="list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>Python</li>
+</ul>
+
+<p id="msg"></p>
+
+<script>
+document.getElementById("list").addEventListener("click",function(event){
+
+    if(event.target.tagName==="LI"){
+        document.getElementById("msg").textContent=
+            "Selected: "+event.target.textContent;
+    }
+
+});
+</script>
+
+</body>
+</html>

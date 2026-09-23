@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 10 - Pseudo Classes</title>
+
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            padding: 40px;
+            font-family: Arial;
+        }
+
+        a {
+            color: #4f8cff;
+        }
+
+        a:hover {
+            color: #ff5ca8;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+
+        input:focus {
+            border: 3px solid #ff5ca8;
+            outline: none;
+        }
+
+        input {
+            padding: 12px;
+            background: #172b4d;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Pseudo Classes</h1>
+
+    <a href="https://example.com">
+        Hover / Visited Link
+    </a>
+
+    <br><br>
+
+    <button>Click Me</button>
+
+    <br><br>
+
+    <input type="text" placeholder="Click here and focus">
+
+</body>
+</html>

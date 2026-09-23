@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Methods</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+            padding: 50px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        button {
+            padding: 12px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+        }
+        #demo {
+            margin-top: 20px;
+            padding: 20px;
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>DOM Methods</h1>
+
+    <button onclick="createElementDemo()">createElement()</button>
+    <button onclick="appendDemo()">appendChild()</button>
+    <button onclick="removeDemo()">remove()</button>
+    <button onclick="replaceDemo()">replaceChild()</button>
+
+    <div id="demo">
+        Original Content
+    </div>
+
+</div>
+
+<script>
+function createElementDemo() {
+
+    const element = document.createElement("p");
+
+    element.textContent =
+        "A new paragraph was created.";
+
+    document.getElementById("demo").appendChild(element);
+}
+
+function appendDemo() {
+
+    const element = document.createElement("p");
+
+    element.textContent =
+        "This paragraph was added using appendChild().";
+
+    document.getElementById("demo").appendChild(element);
+}
+
+function removeDemo() {
+
+    const demo = document.getElementById("demo");
+
+    if (demo.lastElementChild) {
+        demo.lastElementChild.remove();
+    }
+}
+
+function replaceDemo() {
+
+    const demo = document.getElementById("demo");
+
+    const oldElement = demo.firstElementChild;
+
+    const newElement = document.createElement("h2");
+
+    newElement.textContent =
+        "Element replaced using replaceChild()";
+
+    if (oldElement) {
+        demo.replaceChild(newElement, oldElement);
+    }
+}
+</script>
+
+</body>
+</html>

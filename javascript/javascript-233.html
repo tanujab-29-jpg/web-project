@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><title>Age Calculator</title></head>
+<body>
+
+<h1>Age Calculator</h1>
+
+<input id="dob" type="date">
+
+<button onclick="calculateAge()">Calculate Age</button>
+
+<h2 id="result"></h2>
+
+<script>
+function calculateAge(){
+
+    const dob=new Date(document.getElementById("dob").value);
+    const today=new Date();
+
+    if(isNaN(dob)){
+        result.textContent="Select date of birth";
+        return;
+    }
+
+    let age=today.getFullYear()-dob.getFullYear();
+
+    const month=today.getMonth()-dob.getMonth();
+
+    if(month<0 ||
+       (month===0 && today.getDate()<dob.getDate())){
+        age--;
+    }
+
+    result.textContent="Age: "+age+" years";
+}
+</script>
+
+</body>
+</html>

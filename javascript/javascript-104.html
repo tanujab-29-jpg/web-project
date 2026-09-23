@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>104 - Feedback Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            display: block;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Feedback Form</h2>
+
+    <form id="feedbackForm">
+
+        <label for="name">Name</label>
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+        >
+        <span id="nameError" class="error"></span>
+
+        <label for="email">Email</label>
+        <input
+            type="text"
+            id="email"
+            placeholder="Enter your email"
+        >
+        <span id="emailError" class="error"></span>
+
+        <label for="rating">Rating</label>
+        <select id="rating">
+            <option value="">-- Select Rating --</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Average">Average</option>
+            <option value="Poor">Poor</option>
+        </select>
+        <span id="ratingError" class="error"></span>
+
+        <label for="message">Feedback</label>
+        <textarea
+            id="message"
+            placeholder="Enter your feedback"
+        ></textarea>
+        <span id="messageError" class="error"></span>
+
+        <button type="submit">Submit Feedback</button>
+
+    </form>
+
+    <p id="success"></p>
+
+</div>
+
+<script>
+
+document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+
+    // Prevent page reload
+    event.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let rating = document.getElementById("rating").value;
+    let message = document.getElementById("message").value.trim();
+
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let ratingError = document.getElementById("ratingError");
+    let messageError = document.getElementById("messageError");
+    let success = document.getElementById("success");
+
+    // Clear previous messages
+    nameError.innerHTML = "";
+    emailError.innerHTML = "";
+    ratingError.innerHTML = "";
+    messageError.innerHTML = "";
+    success.innerHTML = "";
+
+    let valid = true;
+
+    // Name validation
+    if (name === "") {
+
+        nameError.innerHTML =
+            "Name is required.";
+
+        valid = false;
+
+    } else if (!/^[A-Za-z ]+$/.test(name)) {
+
+        nameError.innerHTML =
+            "Name must contain only letters.";
+
+        valid = false;
+    }
+
+    // Email validation
+    let emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email === "") {
+
+        emailError.innerHTML =
+            "Email is required.";
+
+        valid = false;
+
+    } else if (!emailPattern.test(email)) {
+
+        emailError.innerHTML =
+            "Enter a valid email address.";
+
+        valid = false;
+    }
+
+    // Rating validation
+    if (rating === "") {
+
+        ratingError.innerHTML =
+            "Please select a rating.";
+
+        valid = false;
+    }
+
+    // Feedback validation
+    if (message === "") {
+
+        messageError.innerHTML =
+            "Please enter your feedback.";
+
+        valid = false;
+
+    } else if (message.length < 10) {
+
+        messageError.innerHTML =
+            "Feedback must contain at least 10 characters.";
+
+        valid = false;
+    }
+
+    // Final result
+    if (valid) {
+
+        success.innerHTML =
+            "Thank you! Your feedback was submitted successfully.";
+
+        document.getElementById("feedbackForm").reset();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 38 - Visibility</title>
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        .box {
+            padding: 25px;
+            margin: 15px;
+            background: #4f8cff;
+            border-radius: 15px;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .transparent {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Visibility and Hiding</h1>
+
+<div class="box">Visible Element</div>
+
+<div class="box hidden">
+    visibility: hidden
+</div>
+
+<div class="box none">
+    display: none
+</div>
+
+<div class="box transparent">
+    opacity: 0
+</div>
+
+<div class="box">
+    This element remains visible.
+</div>
+
+</body>
+</html>

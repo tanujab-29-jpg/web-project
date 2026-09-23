@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>72 - Keyboard Events</title>
+</head>
+<body>
+
+<h2>Keyboard Events</h2>
+
+<input type="text"
+       onkeydown="keyDown()"
+       onkeyup="keyUp()">
+
+<p id="result"></p>
+
+<script>
+function keyDown() {
+    document.getElementById("result").innerHTML =
+        "Key is pressed";
+}
+
+function keyUp() {
+    document.getElementById("result").innerHTML =
+        "Key is released";
+}
+</script>
+
+</body>
+</html>

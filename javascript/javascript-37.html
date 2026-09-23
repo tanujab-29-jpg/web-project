@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript 37 - Advanced JavaScript</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #07111f;
+            color: white;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4f8cff;
+        }
+
+        .card {
+            background: #101f38;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            border: 1px solid #29476f;
+        }
+
+        h2 {
+            color: #ff5ca8;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #4f8cff;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background: #ff5ca8;
+        }
+
+        #output {
+            background: #07111f;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Advanced JavaScript Lab</h1>
+
+    <div class="card">
+
+        <h2>Advanced JavaScript Demonstration</h2>
+
+        <button onclick="showLetConst()">
+            let & const
+        </button>
+
+        <button onclick="showArray()">
+            Array Methods
+        </button>
+
+        <button onclick="showObject()">
+            Objects
+        </button>
+
+        <button onclick="showClass()">
+            Classes
+        </button>
+
+        <button onclick="showPromise()">
+            Promise
+        </button>
+
+        <div id="output">
+            Click a button to display the result.
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    // let and const
+
+    function showLetConst() {
+
+        let name = "Tanuja";
+        const course = "B.Tech CSE";
+
+        document.getElementById("output").innerHTML =
+            "Name: " + name +
+            "<br>Course: " + course;
+    }
+
+
+    // Array Methods
+
+    function showArray() {
+
+        let numbers = [10, 20, 30, 40, 50];
+
+        let doubled = numbers.map(function(number) {
+            return number * 2;
+        });
+
+        let filtered = numbers.filter(function(number) {
+            return number > 25;
+        });
+
+        let sum = numbers.reduce(function(total, number) {
+            return total + number;
+        }, 0);
+
+        document.getElementById("output").innerHTML =
+            "Original Array: " + numbers +
+            "<br>Doubled: " + doubled +
+            "<br>Greater than 25: " + filtered +
+            "<br>Sum: " + sum;
+    }
+
+
+    // Object
+
+    function showObject() {
+
+        let student = {
+            name: "Tanuja",
+            age: 20,
+            course: "B.Tech CSE"
+        };
+
+        document.getElementById("output").innerHTML =
+            "Name: " + student.name +
+            "<br>Age: " + student.age +
+            "<br>Course: " + student.course;
+    }
+
+
+    // Class
+
+    class Student {
+
+        constructor(name, course) {
+            this.name = name;
+            this.course = course;
+        }
+
+        display() {
+            return "Name: " + this.name +
+                   "<br>Course: " + this.course;
+        }
+    }
+
+
+    function showClass() {
+
+        let student = new Student(
+            "Tanuja",
+            "B.Tech CSE"
+        );
+
+        document.getElementById("output").innerHTML =
+            student.display();
+    }
+
+
+    // Promise
+
+    function showPromise() {
+
+        let promise = new Promise(function(resolve) {
+
+            setTimeout(function() {
+                resolve("Promise completed successfully!");
+            }, 1000);
+
+        });
+
+        document.getElementById("output").innerHTML =
+            "Waiting for Promise...";
+
+        promise.then(function(message) {
+
+            document.getElementById("output").innerHTML =
+                message;
+
+        });
+    }
+
+</script>
+
+</body>
+</html>

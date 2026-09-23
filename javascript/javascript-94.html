@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>94 - Form Events</title>
+</head>
+<body>
+
+<h2>Form Events</h2>
+
+<form id="myForm">
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <br><br>
+
+    <select id="course">
+        <option value="">Select Course</option>
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<p id="result"></p>
+
+<script>
+let name = document.getElementById("name");
+let course = document.getElementById("course");
+let form = document.getElementById("myForm");
+let result = document.getElementById("result");
+
+name.addEventListener("focus", function() {
+    result.innerHTML = "Name field is focused.";
+});
+
+name.addEventListener("blur", function() {
+    result.innerHTML = "Name field lost focus.";
+});
+
+course.addEventListener("change", function() {
+    result.innerHTML = "Selected: " + course.value;
+});
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    result.innerHTML = "Form submitted successfully!";
+});
+</script>
+
+</body>
+</html>

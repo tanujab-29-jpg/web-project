@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Key Display</title>
+<style>
+body{text-align:center;font-family:Arial;padding:50px}
+#key{font-size:50px;color:#667eea}
+</style>
+</head>
+<body>
+
+<h1>Press Any Key</h1>
+
+<div id="key">-</div>
+
+<script>
+document.addEventListener("keydown",function(event){
+    document.getElementById("key").textContent=event.key;
+});
+</script>
+
+</body>
+</html>

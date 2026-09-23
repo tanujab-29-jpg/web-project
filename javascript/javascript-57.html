@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Duplicates</title>
+</head>
+<body>
+    <h2>Remove Duplicate Elements</h2>
+
+    <script>
+        let arr = [10, 20, 10, 30, 20, 40, 30];
+
+        let uniqueArray = [...new Set(arr)];
+
+        document.write("Original Array: " + arr.join(", ") + "<br>");
+        document.write("After removing duplicates: " + uniqueArray.join(", "));
+    </script>
+</body>
+</html>

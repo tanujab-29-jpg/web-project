@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS 01 - Types of CSS</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="external-style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #07111f;
+            color: white;
+            padding: 40px;
+        }
+
+        .internal {
+            color: #4f8cff;
+            font-size: 25px;
+        }
+
+        .card {
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>Types of CSS</h1>
+
+        <!-- Inline CSS -->
+        <p style="color: #ff5ca8; font-size: 25px;">
+            This paragraph uses Inline CSS.
+        </p>
+
+        <!-- Internal CSS -->
+        <p class="internal">
+            This paragraph uses Internal CSS.
+        </p>
+
+        <!-- External CSS -->
+        <p class="external">
+            This paragraph uses External CSS.
+        </p>
+
+    </div>
+
+</body>
+</html>.external {
+    color: #8d6cff;
+    font-size: 25px;
+    font-weight: bold;
+}

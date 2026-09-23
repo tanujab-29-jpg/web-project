@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>81 - Key Event</title>
+</head>
+<body>
+
+<h2>Press any key</h2>
+
+<p id="result"></p>
+
+<script>
+document.addEventListener("keydown", function(event) {
+    document.getElementById("result").innerHTML =
+        "You pressed: " + event.key;
+});
+</script>
+
+</body>
+</html>

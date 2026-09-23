@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>localStorage Username</title>
+</head>
+<body>
+
+<h1>Store Username</h1>
+
+<input id="username" placeholder="Enter username">
+<button onclick="save()">Save</button>
+
+<script>
+function save() {
+    localStorage.setItem(
+        "username",
+        document.getElementById("username").value
+    );
+
+    alert("Username saved!");
+}
+</script>
+
+</body>
+</html>

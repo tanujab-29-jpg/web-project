@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 63 - Responsive Grid</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            padding: 50px 20px;
+            background: #101f38;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #4f8cff;
+        }
+
+        .card h2 {
+            color: #ff5ca8;
+        }
+
+        @media (max-width: 1000px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Responsive CSS Grid</h1>
+
+<div class="grid">
+
+    <div class="card">
+        <h2>HTML</h2>
+        <p>Structure</p>
+    </div>
+
+    <div class="card">
+        <h2>CSS</h2>
+        <p>Styling</p>
+    </div>
+
+    <div class="card">
+        <h2>JavaScript</h2>
+        <p>Programming</p>
+    </div>
+
+    <div class="card">
+        <h2>Python</h2>
+        <p>Programming</p>
+    </div>
+
+    <div class="card">
+        <h2>C</h2>
+        <p>Data Structures</p>
+    </div>
+
+    <div class="card">
+        <h2>Java</h2>
+        <p>Application Development</p>
+    </div>
+
+</div>
+
+</body>
+</html>

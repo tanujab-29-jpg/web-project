@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .clock-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 350px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        #clock {
+            font-size: 45px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        #date {
+            font-size: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="clock-container">
+        <h1>Digital Clock</h1>
+
+        <div id="clock">00:00:00 AM</div>
+
+        <div id="date">Loading date...</div>
+    </div>
+
+    <script>
+        function updateClock() {
+
+            let now = new Date();
+
+            let hours = now.getHours();
+            let minutes = String(now.getMinutes()).padStart(2, "0");
+            let seconds = String(now.getSeconds()).padStart(2, "0");
+
+            let ampm = hours >= 12 ? "PM" : "AM";
+
+            // Convert 24-hour format to 12-hour format
+            hours = hours % 12;
+
+            if (hours === 0) {
+                hours = 12;
+            }
+
+            hours = String(hours).padStart(2, "0");
+
+            document.getElementById("clock").textContent =
+                `${hours}:${minutes}:${seconds} ${ampm}`;
+
+            document.getElementById("date").textContent =
+                now.toDateString();
+        }
+
+        // Display immediately
+        updateClock();
+
+        // Update every second
+        setInterval(updateClock, 1000);
+    </script>
+
+</body>
+</html>

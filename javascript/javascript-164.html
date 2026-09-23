@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Counter</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg,#667eea,#764ba2);
+        }
+        .box {
+            background: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        textarea {
+            width: 90%;
+            height: 150px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+    <h1>Live Word Counter</h1>
+
+    <textarea id="text" placeholder="Type something..."></textarea>
+
+    <h2>Words: <span id="count">0</span></h2>
+
+</div>
+
+<script>
+document.getElementById("text").addEventListener("input", function() {
+
+    const text = this.value.trim();
+
+    if (text === "") {
+        document.getElementById("count").textContent = 0;
+        return;
+    }
+
+    const words = text.split(/\s+/);
+
+    document.getElementById("count").textContent =
+        words.length;
+});
+</script>
+
+</body>
+</html>

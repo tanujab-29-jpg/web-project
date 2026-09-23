@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 26 - Inheritance</title>
+
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+        }
+
+        .parent {
+            color: #4f8cff;
+            padding: 30px;
+        }
+
+        .child {
+            color: #ff5ca8;
+        }
+
+        p {
+            color: green;
+        }
+
+        .special {
+            color: orange;
+        }
+
+        #unique {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parent">
+
+        <h1>CSS Inheritance</h1>
+
+        <p>
+            This text inherits properties from the parent
+            unless another rule overrides it.
+        </p>
+
+        <p class="special">
+            Class selector has greater specificity than element selector.
+        </p>
+
+        <p id="unique" class="special">
+            ID selector has greater specificity than class selector.
+        </p>
+
+    </div>
+
+</body>
+</html>

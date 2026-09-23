@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks and Grade Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            width: 450px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .subject {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        #calculateBtn {
+            width: 100%;
+            padding: 13px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        #calculateBtn:hover {
+            background: #5568d8;
+        }
+
+        #result {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background: #f3f5ff;
+            border-radius: 10px;
+        }
+
+        #result h2 {
+            text-align: center;
+            color: #667eea;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 17px;
+        }
+
+        .grade {
+            font-size: 25px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        #error {
+            color: #dc3545;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Marks Calculator</h1>
+
+        <div class="subject">
+            <label for="subject1">Subject 1</label>
+            <input type="number" id="subject1"
+                   placeholder="Enter marks (0-100)"
+                   min="0" max="100">
+        </div>
+
+        <div class="subject">
+            <label for="subject2">Subject 2</label>
+            <input type="number" id="subject2"
+                   placeholder="Enter marks (0-100)"
+                   min="0" max="100">
+        </div>
+
+        <div class="subject">
+            <label for="subject3">Subject 3</label>
+            <input type="number" id="subject3"
+                   placeholder="Enter marks (0-100)"
+                   min="0" max="100">
+        </div>
+
+        <div class="subject">
+            <label for="subject4">Subject 4</label>
+            <input type="number" id="subject4"
+                   placeholder="Enter marks (0-100)"
+                   min="0" max="100">
+        </div>
+
+        <div class="subject">
+            <label for="subject5">Subject 5</label>
+            <input type="number" id="subject5"
+                   placeholder="Enter marks (0-100)"
+                   min="0" max="100">
+        </div>
+
+        <button id="calculateBtn" onclick="calculateResult()">
+            Calculate Result
+        </button>
+
+        <div id="error"></div>
+
+        <div id="result">
+
+            <h2>Result</h2>
+
+            <div class="result-item">
+                <span>Total Marks:</span>
+                <strong id="total"></strong>
+            </div>
+
+            <div class="result-item">
+                <span>Percentage:</span>
+                <strong id="percentage"></strong>
+            </div>
+
+            <div class="result-item">
+                <span>Grade:</span>
+                <strong id="grade" class="grade"></strong>
+            </div>
+
+            <div class="result-item">
+                <span>Result:</span>
+                <strong id="passFail"></strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function calculateResult() {
+
+            const error = document.getElementById("error");
+            const result = document.getElementById("result");
+
+            let marks = [];
+
+            for (let i = 1; i <= 5; i++) {
+
+                let value =
+                    document.getElementById("subject" + i).value;
+
+                if (value === "") {
+
+                    error.textContent =
+                        "Please enter marks for all subjects.";
+
+                    result.style.display = "none";
+
+                    return;
+                }
+
+                value = Number(value);
+
+                if (value < 0 || value > 100) {
+
+                    error.textContent =
+                        "Marks must be between 0 and 100.";
+
+                    result.style.display = "none";
+
+                    return;
+                }
+
+                marks.push(value);
+            }
+
+            let total = 0;
+
+            for (let mark of marks) {
+                total += mark;
+            }
+
+            let percentage = total / 5;
+
+            let grade;
+
+            if (percentage >= 90) {
+                grade = "A+";
+            }
+            else if (percentage >= 80) {
+                grade = "A";
+            }
+            else if (percentage >= 70) {
+                grade = "B";
+            }
+            else if (percentage >= 60) {
+                grade = "C";
+            }
+            else if (percentage >= 50) {
+                grade = "D";
+            }
+            else {
+                grade = "F";
+            }
+
+            let passFail;
+
+            if (marks.every(mark => mark >= 35)) {
+                passFail = "PASS";
+            }
+            else {
+                passFail = "FAIL";
+            }
+
+            document.getElementById("total").textContent =
+                total + " / 500";
+
+            document.getElementById("percentage").textContent =
+                percentage.toFixed(2) + "%";
+
+            document.getElementById("grade").textContent =
+                grade;
+
+            document.getElementById("passFail").textContent =
+                passFail;
+
+            if (passFail === "PASS") {
+                document.getElementById("passFail").style.color =
+                    "#28a745";
+            }
+            else {
+                document.getElementById("passFail").style.color =
+                    "#dc3545";
+            }
+
+            error.textContent = "";
+
+            result.style.display = "block";
+        }
+
+    </script>
+
+</body>
+</html>

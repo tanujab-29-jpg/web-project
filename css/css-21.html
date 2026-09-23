@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 21 - Student Profile</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        .profile {
+            max-width: 700px;
+            margin: auto;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ff5ca8;
+        }
+
+        .details {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .details p {
+            padding: 12px;
+            background: #101f38;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #4f8cff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile">
+
+        <img src="https://picsum.photos/200">
+
+        <h1>Student Profile</h1>
+
+        <h2>Priya Kumar</h2>
+
+        <div class="details">
+            <p><b>Course:</b> B.Tech Computer Science</p>
+            <p><b>Year:</b> Second Year</p>
+            <p><b>Roll Number:</b> CSE2026</p>
+            <p><b>College:</b> ABC University</p>
+            <p><b>Email:</b> student@example.com</p>
+            <p><b>Skills:</b> HTML, CSS, JavaScript, Python</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

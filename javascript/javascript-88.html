@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>88 - stopPropagation</title>
+</head>
+<body>
+
+<div id="parent" style="padding:30px; background:lightblue;">
+    Parent
+    <button id="child">Click Child</button>
+</div>
+
+<p id="result"></p>
+
+<script>
+document.getElementById("parent").addEventListener("click", function() {
+    document.getElementById("result").innerHTML =
+        "Parent clicked.";
+});
+
+document.getElementById("child").addEventListener("click", function(event) {
+
+    event.stopPropagation();
+
+    document.getElementById("result").innerHTML =
+        "Child clicked. Parent event stopped.";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Connection Status</title>
+<style>
+#status {
+    padding:20px;
+    font-size:25px;
+}
+</style>
+</head>
+<body>
+
+<h1>Browser Connection Status</h1>
+
+<div id="status"></div>
+
+<script>
+const status = document.getElementById("status");
+
+function updateStatus() {
+
+    if (navigator.onLine) {
+        status.textContent = "Internet connection is available.";
+        status.style.background = "#90ee90";
+    } else {
+        status.textContent = "Internet connection is unavailable.";
+        status.style.background = "#ff9999";
+    }
+}
+
+window.addEventListener("online", updateStatus);
+window.addEventListener("offline", updateStatus);
+
+updateStatus();
+</script>
+
+</body>
+</html>

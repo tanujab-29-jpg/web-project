@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 67 - Keyframe Animation</title>
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+            overflow-x: hidden;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #4f8cff, #ff5ca8);
+            border-radius: 20px;
+            animation: move 4s infinite alternate ease-in-out;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0) rotate(0);
+            }
+
+            50% {
+                transform: translateX(400px) rotate(180deg);
+            }
+
+            100% {
+                transform: translateX(800px) rotate(360deg);
+            }
+        }
+
+        @media (max-width: 900px) {
+            @keyframes move {
+                0% {
+                    transform: translateX(0) rotate(0);
+                }
+
+                50% {
+                    transform: translateX(150px) rotate(180deg);
+                }
+
+                100% {
+                    transform: translateX(300px) rotate(360deg);
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>CSS Keyframe Animation</h1>
+
+<div class="box">
+    Animate
+</div>
+
+</body>
+</html>

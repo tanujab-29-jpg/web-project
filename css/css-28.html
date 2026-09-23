@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS 28 - Combinators</title>
+
+    <style>
+        body {
+            background: #07111f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        .container {
+            padding: 30px;
+            background: #101f38;
+        }
+
+        /* Descendant */
+        .container p {
+            color: #4f8cff;
+        }
+
+        /* Child */
+        .container > h2 {
+            color: #ff5ca8;
+        }
+
+        /* Adjacent sibling */
+        h2 + p {
+            font-weight: bold;
+        }
+
+        /* General sibling */
+        h2 ~ p {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Combinators</h2>
+
+        <p>Adjacent sibling</p>
+
+        <p>General sibling</p>
+
+        <div>
+            <p>Descendant selector</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>86 - Event Capturing</title>
+</head>
+<body>
+
+<div id="parent" style="padding:30px; background:lightblue;">
+    Parent
+    <button id="child">Child Button</button>
+</div>
+
+<p id="result"></p>
+
+<script>
+document.getElementById("parent").addEventListener(
+    "click",
+    function() {
+        document.getElementById("result").innerHTML =
+            "Parent event executed using capturing.";
+    },
+    true
+);
+</script>
+
+</body>
+</html>

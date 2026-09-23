@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Object</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 8px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eef4ff;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Window Object Demonstration</h2>
+
+    <button onclick="showInfo()">Show Window Information</button>
+
+    <button onclick="openWindow()">Open Window</button>
+
+    <button onclick="showAlert()">Show Alert</button>
+
+    <button onclick="showConfirm()">Show Confirm</button>
+
+    <div id="output"></div>
+
+</div>
+
+<script>
+
+function showInfo() {
+
+    let output = document.getElementById("output");
+
+    output.innerHTML =
+        "<b>Window Width:</b> " + window.innerWidth + " px<br>" +
+        "<b>Window Height:</b> " + window.innerHeight + " px<br>" +
+        "<b>Screen Width:</b> " + screen.width + " px<br>" +
+        "<b>Screen Height:</b> " + screen.height + " px";
+}
+
+function openWindow() {
+    window.open(
+        "https://www.google.com",
+        "_blank",
+        "width=600,height=400"
+    );
+}
+
+function showAlert() {
+    window.alert("This is an alert created using the Window object.");
+}
+
+function showConfirm() {
+
+    let result = window.confirm(
+        "Do you want to continue?"
+    );
+
+    if (result) {
+        document.getElementById("output").textContent =
+            "You clicked OK.";
+    } else {
+        document.getElementById("output").textContent =
+            "You clicked Cancel.";
+    }
+}
+
+</script>
+
+</body>
+</html>
